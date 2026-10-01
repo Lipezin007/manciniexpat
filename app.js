@@ -1,16 +1,5 @@
-/* ====== CONFIGURAÇÃO — edite aqui ====== */
-const CONFIG = {
-  whatsapp: "32456321427",            // número com DDI, só dígitos
-  phoneLabel: "+32 456 32 14 27",
-  email: "manciniexpatservices@gmail.com",
-  hours: ["09:00","09:30","10:00","10:30","11:00","11:30","14:00","14:30","15:00","15:30","16:00","16:30"],
-  workDays: [1,2,3,4,5],              // 0=dom ... 6=sáb
-  daysAhead: 14,
-  defaultLang: "pt"
-};
-
-const ICONS = { traducao:"📄", interprete:"🗣️", acompanhamento:"🤝", admin:"🗂️", recem:"🏡", consulta:"💬" };
-const HELP_TO_SERVICE = { traducao:"traducao", admin:"consulta", interprete:"interprete", acompanhamento:"acompanhamento", consulta:"consulta" };
+const ICONS = { traducao:"📄", interprete:"🗣️", acompanhamento:"🤝", consulta:"💬" };
+const SITUATION_ICONS = { carta:"📬", medico:"🩺", traduzir:"📄", orgao:"🏛️", chegou:"🧳", reuniao:"💼" };
 
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const waLink = msg => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
@@ -33,21 +22,46 @@ function setLang(l){
   $$("[data-i18n]").forEach(el => { const v = L.t[el.dataset.i18n]; if (v != null) el.innerHTML = v; });
   $$("[data-lang]").forEach(a => a.classList.toggle("on", a.dataset.lang === l));
   $$("#waFloat,#ctaWa,#footWa").forEach(a => a.href = waLink(L.wa.hello));
-  renderServices(); renderGuides(); renderFaq(); renderPick();
+  renderHelper(); renderServices(); renderHow(); renderTips(); renderGuides(); renderForWho(); renderFaq(); renderPick();
   if (activeHelp) showHelp(activeHelp);
   if ($("#modal").classList.contains("open")) go(step);
 }
 
 /* ===== Seções dinâmicas ===== */
+// Tradução é sob orçamento; os demais serviços são agendados
+const serviceAction = (id, cls) => id === "traducao"
+  ? `<a class="btn ${cls}" href="#orcamento">${L.t["q.submit"]}</a>`
+  : `<button class="btn ${cls}" data-book="${id}">${L.t["btn.book"]}</button>`;
+
+function renderHelper(){
+  $("#helperOptions").innerHTML = L.situations.map(s =>
+    `<button class="option${s.id === activeHelp ? " active" : ""}" data-help="${s.id}"><span class="ico">${SITUATION_ICONS[s.id]}</span><span>${s.text}</span></button>`).join("");
+  $$("#helperOptions .option").forEach(b => b.onclick = () => {
+    $$("#helperOptions .option").forEach(x => x.classList.remove("active")); b.classList.add("active");
+    showHelp(b.dataset.help);
+  });
+}
 function renderServices(){
   $("#servicesGrid").innerHTML = L.services.map(s => `
-    <div class="service"><div class="ico">${ICONS[s.id]}</div><h3>${s.title}</h3><p>${s.desc}</p>
+    <div class="service"><div class="svc-top"><div class="ico">${ICONS[s.id]}</div><span class="dur">${s.dur}</span></div>
+    <h3>${s.title}</h3><p>${s.desc}</p>
     <ul>${s.items.map(i => `<li>${i}</li>`).join("")}</ul>
-    <button class="btn btn-ghost" data-book="${s.id}">${L.t["btn.book"]}</button></div>`).join("");
+    ${serviceAction(s.id, "btn-ghost")}</div>`).join("");
+}
+function renderHow(){
+  $("#howSteps").innerHTML = L.how.map(([t, p], i) =>
+    `<div class="step"><div class="n">0${i + 1}</div><h3>${t}</h3><p>${p}</p></div>`).join("");
+}
+function renderTips(){
+  $("#quoteTips").innerHTML = L.quoteTips.map(t => `<li>${t}</li>`).join("");
 }
 function renderGuides(){
-  $("#guidesGrid").innerHTML = L.guides.map(([tag, t, p]) =>
-    `<a class="guide" href="#"><span class="tag">${tag}</span><h3>${t}</h3><p>${p}</p></a>`).join("");
+  $("#guidesGrid").innerHTML = L.guides.map(g => `
+    <details class="guide"><summary><span><span class="tag">${g.tag}</span><h3>${g.title}</h3></span></summary>
+    <ul>${g.tips.map(t => `<li>${t}</li>`).join("")}</ul></details>`).join("");
+}
+function renderForWho(){
+  $("#forWho").innerHTML = L.forWho.map(([t, p]) => `<div><b>${t}</b><span>${p}</span></div>`).join("");
 }
 function renderFaq(){
   $("#faqList").innerHTML = L.faq.map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join("");
@@ -69,19 +83,16 @@ $$("[data-lang]").forEach(a => a.onclick = e => {
   history.replaceState(null, "", "?lang=" + a.dataset.lang + location.hash);
 });
 
-/* ===== Assistente ===== */
+/* ===== Assistente: situação → serviço recomendado ===== */
 let activeHelp = null;
-function showHelp(key){
-  activeHelp = key;
-  $("#helperTitle").textContent = svc(HELP_TO_SERVICE[key]).title;
-  $("#helperText").textContent = L.help[key];
+function showHelp(id){
+  activeHelp = id;
+  const s = L.situations.find(x => x.id === id);
+  $("#helperTitle").textContent = svc(s.svc).title;
+  $("#helperText").textContent = s.advice;
+  $("#helperAction").innerHTML = serviceAction(s.svc, "btn-gold");
   $("#helperResult").classList.add("show");
 }
-$$("#helperOptions .option").forEach(b => b.onclick = () => {
-  $$("#helperOptions .option").forEach(x => x.classList.remove("active")); b.classList.add("active");
-  showHelp(b.dataset.help);
-});
-$("#helperBtn").onclick = () => openBooking(HELP_TO_SERVICE[activeHelp]);
 
 /* ===== Orçamento ===== */
 $("#fileInput").onchange = e => $("#fileList").textContent = [...e.target.files].map(f => "📄 " + f.name).join("  ·  ");
@@ -129,17 +140,15 @@ function renderSlots(){
   $$("#slots .slot").forEach(b => b.onclick = () => { booking.time = b.textContent; go(4); });
 }
 const fmtDate = d => d.toLocaleDateString(L.meta.locale, { weekday: "long", day: "numeric", month: "long" });
-const modeLabel = () => L.t["m.pres"];
 function summaryHTML(){
   const s = L.sum;
   return `<div><span>${s.service}</span><b>${svc(booking.service).title}</b></div>
-    <div><span>${s.mode}</span><b>${modeLabel()}</b></div>
     <div><span>${s.date}</span><b>${fmtDate(booking.date)}</b></div>
     <div><span>${s.time}</span><b>${booking.time}</b></div>`;
 }
 $("#bookForm").onsubmit = e => {
   e.preventDefault(); const d = Object.fromEntries(new FormData(e.target)); const w = L.wa, s = L.sum;
-  const msg = `${w.book}\n\n${s.service}: ${svc(booking.service).title}\n${s.mode}: ${modeLabel()}\n${s.date}: ${fmtDate(booking.date)}\n${s.time}: ${booking.time}\n\n${w.name}: ${d.nome}\n${w.phone}: ${d.tel}\n${w.email}: ${d.email}\n${w.notes}: ${d.obs || "—"}`;
+  const msg = `${w.book}\n\n${s.service}: ${svc(booking.service).title}\n${s.date}: ${fmtDate(booking.date)}\n${s.time}: ${booking.time}\n\n${w.name}: ${d.nome}\n${w.phone}: ${d.tel}\n${w.email}: ${d.email}\n${w.notes}: ${d.obs || "—"}`;
   go(5);
   window.open(waLink(msg), "_blank");
 };
@@ -156,3 +165,8 @@ $("#modal").onclick = e => { if (e.target.id === "modal") closeBooking(); };
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeBooking(); });
 
 setLang(pickLang());
+
+/* Links vindos de outra página (ex.: curso.html → index.html#chegando).
+   O navegador pula para a seção antes de o JS preencher o conteúdo acima dela, então rolamos de novo. */
+if (location.hash === "#agendar") { history.replaceState(null, "", location.pathname + location.search); openBooking(null); }
+else if (location.hash.length > 1) { const target = document.getElementById(location.hash.slice(1)); if (target) target.scrollIntoView({ behavior: "instant" }); }

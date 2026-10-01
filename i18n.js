@@ -4,30 +4,25 @@ const I18N = {
 /* ============================ PORTUGUÊS ============================ */
 pt: {
   meta: { locale: "pt-BR", title: "Mancini Expat — Sua vida na Bélgica, mais simples",
-    desc: "Traduções, interpretação e acompanhamento para brasileiros na Bélgica. Atendimento em português. Agende online." },
+    desc: "Traduções, interpretação e acompanhamento em órgãos para brasileiros na Bélgica, em português. Agende pelo site." },
   t: {
-    "nav.services": "Serviços", "nav.how": "Como funciona", "nav.arriving": "Chegando na Bélgica", "nav.about": "Sobre", "nav.faq": "FAQ",
+    "nav.services": "Serviços", "nav.how": "Como funciona", "nav.guides": "Guias", "nav.about": "Sobre", "nav.faq": "FAQ", "nav.course": "Aula grátis de holandês",
     "btn.book": "Agendar",
     "hero.kicker": "Brasil &nbsp;→&nbsp; Bélgica",
     "hero.title": "Sua vida na Bélgica, <em>mais simples.</em>",
-    "hero.text": "Traduções, interpretação e acompanhamento para brasileiros na Bélgica. Atendimento em português, com clareza e sem complicação.",
-    "hero.book": "Agendar atendimento", "hero.send": "Enviar meu documento",
-    "trust.1": "Atendimento 100% em português", "trust.2": "Atendemos toda a Bélgica", "trust.3": "Documentos tratados com sigilo", "trust.4": "Português · Français · Nederlands",
+    "hero.text": "Traduções, interpretação e acompanhamento em órgãos para brasileiros na Bélgica, em português.",
+    "hero.book": "Agendar atendimento", "hero.send": "Enviar documento",
+    "trust.1": "Toda a Bélgica", "trust.2": "Atendimento presencial", "trust.3": "Tradução simples ou juramentada",
     "help.eyebrow": "Comece por aqui", "help.title": "Como podemos te ajudar?",
-    "help.lead": "Escolha a opção que mais combina com a sua situação. Nós indicamos o caminho certo.",
-    "help.o1": "Preciso traduzir um documento", "help.o2": "Preciso de ajuda com documentos / burocracia", "help.o3": "Preciso de um intérprete",
-    "help.o4": "Quero alguém comigo na commune / órgão", "help.o5": "Não sei exatamente o que preciso",
-    "help.rec": "Recomendamos:", "help.bookNow": "Agendar agora",
-    "svc.eyebrow": "Serviços", "svc.title": "Tudo o que você precisa para se estabelecer",
-    "svc.lead": "Da tradução do seu primeiro documento até o dia em que você resolve tudo sozinho.",
-    "steps.eyebrow": "Como funciona", "steps.title": "Três passos. Sem complicação.", "steps.lead": "Você nos conta o que precisa — nós cuidamos do resto.",
-    "steps.1t": "Conte o que precisa", "steps.1p": "Agende um horário ou envie seu documento pelo site. Leva menos de 2 minutos.",
-    "steps.2t": "Receba orientação e orçamento", "steps.2p": "Analisamos sua situação e enviamos um orçamento claro, sem surpresas.",
-    "steps.3t": "Nós cuidamos do serviço", "steps.3p": "Traduzimos, acompanhamos e resolvemos — você recebe tudo pronto.",
+    "help.lead": "Não sabe qual serviço pedir? Escolha a situação mais parecida com a sua.",
+    "help.rec": "Recomendamos:",
+    "svc.eyebrow": "Serviços", "svc.title": "O que fazemos",
+    "svc.lead": "Traduções são feitas sob orçamento; os demais serviços, com horário marcado.",
+    "how.eyebrow": "Como funciona", "how.title": "Do pedido ao resultado",
+    "how.lead": "O que acontece depois que você entra em contato.",
     "q.eyebrow": "Orçamento", "q.title": "Envie seu documento e receba um orçamento",
-    "q.lead": "Não precisa ligar nem explicar tudo. Envie uma foto ou PDF, diga para qual idioma e quando precisa.",
-    "q.c1": "Certidões de nascimento, casamento e antecedentes", "q.c2": "Diplomas, históricos e documentos escolares",
-    "q.c3": "CNH, contratos, procurações e documentos pessoais", "q.c4": "Português ⇄ Francês, Holandês e Inglês",
+    "q.lead": "Diga para qual idioma e para quando precisa. Respondemos pelo WhatsApp.",
+    "q.tipsTitle": "Para um orçamento rápido",
     "f.name": "Nome", "f.email": "E-mail", "f.doc": "Tipo de documento",
     "f.doc1": "Certidão", "f.doc2": "Diploma / histórico", "f.doc3": "CNH", "f.doc4": "Contrato / procuração", "f.doc5": "Outro",
     "f.to": "Traduzir para", "l.fr": "Francês", "l.nl": "Holandês", "l.en": "Inglês", "l.pt": "Português",
@@ -35,89 +30,125 @@ pt: {
     "f.files": "Documento(s)", "f.drop": "📎 Clique para anexar PDF ou foto", "f.notes": "Observações (opcional)",
     "q.submit": "Solicitar orçamento", "q.note": "🔒 Seus documentos são usados apenas para o orçamento e o serviço.",
     "g.eyebrow": "Estou chegando na Bélgica", "g.title": "Guias para os seus primeiros passos",
-    "g.lead": "Informação clara, em português, sobre o que todo brasileiro precisa resolver ao chegar.",
+    "g.lead": "Dicas práticas sobre o que todo brasileiro precisa resolver ao chegar. Toque em um guia para abrir.",
     "a.eyebrow": "Sobre nós", "a.title": "Brasileiros ajudando brasileiros na Bélgica",
-    "a.lead": "A Mancini Expat nasceu da experiência de quem já passou pela burocracia belga e sabe como ela pode ser confusa. Nosso objetivo é que você se sinta acolhido, entenda cada etapa e resolva tudo com segurança.",
-    "a.v1": "Clareza", "a.v1s": "Você sempre sabe o que está acontecendo.",
-    "a.v2": "Sigilo", "a.v2s": "Seus documentos são tratados com cuidado.",
-    "a.v3": "Agilidade", "a.v3s": "Respostas rápidas, prazos cumpridos.",
-    "a.v4": "Proximidade", "a.v4s": "Atendimento humano, em português.",
+    "a.lead": "A Mancini Expat nasceu da experiência de quem já passou pela burocracia belga e sabe como ela pode ser confusa. Nosso objetivo é que você entenda cada etapa e resolva tudo com segurança.",
+    "a.forWho": "Para quem é",
     "faq.eyebrow": "Dúvidas frequentes", "faq.title": "Perguntas frequentes",
-    "cta.title": "Pronto para resolver?", "cta.text": "Agende em poucos cliques. Respondemos rapidinho.",
-    "foot.tag": "Traduções e assistência para brasileiros em toda a Bélgica.", "foot.contact": "Contato",
-    "foot.s1": "Traduções", "foot.s2": "Interpretação", "foot.s3": "Acompanhamento", "foot.s4": "Assistência administrativa", "foot.country": "Bélgica",
+    "cta.title": "Tem uma carta, um prazo ou uma consulta marcada?", "cta.text": "Fale com a gente antes do dia: dá tempo de preparar tudo com calma.",
+    "foot.tag": "A burocracia belga, explicada em português.", "foot.site": "Site", "foot.contact": "Contato", "foot.country": "Bélgica",
     "m.eyebrow": "Agendamento",
-    "m.pres": "Presencial", "m.presSub": "Em qualquer cidade da Bélgica",
     "m.fullname": "Nome completo", "m.need": "Conte brevemente o que precisa", "m.confirm": "Confirmar agendamento",
     "m.success": "Pedido de agendamento enviado!", "m.successText": "Vamos confirmar seu horário pelo WhatsApp em breve.",
     "m.close": "Fechar", "m.back": "Voltar"
   },
   steps: ["", "Passo 1 de 3 — Serviço", "", "Passo 2 de 3 — Data e horário", "Passo 3 de 3 — Seus dados", ""],
   titles: ["", "Escolha o serviço", "", "Escolha data e horário", "Confirme seus dados", ""],
-  sum: { service: "Serviço", mode: "Formato", date: "Data", time: "Horário" },
+  sum: { service: "Serviço", date: "Data", time: "Horário" },
   wa: {
     hello: "Olá! Vim pelo site da Mancini Expat e gostaria de mais informações.",
     quote: "Olá! Gostaria de um orçamento de tradução.", book: "Olá! Gostaria de confirmar um agendamento.",
     name: "Nome", phone: "WhatsApp", email: "E-mail", doc: "Documento", lang: "Idioma", urg: "Urgência", files: "Arquivos", notes: "Obs.",
     sendFiles: "(Vou enviar os arquivos em seguida.)"
   },
-  services: [
-    { id: "traducao", title: "Traduções", dur: "Sob orçamento", desc: "Tradução de documentos pessoais e oficiais entre português, francês, holandês e inglês.", items: ["Certidões e diplomas", "Tradução juramentada", "Legalização e apostila"] },
-    { id: "interprete", title: "Interpretação", dur: "1h – 3h", desc: "Um intérprete ao seu lado em consultas médicas, reuniões, cartórios e entrevistas.", items: ["Médico e hospital", "Advogado e notário", "Escola e trabalho"] },
-    { id: "acompanhamento", title: "Acompanhamento em órgãos", dur: "Presencial", desc: "Vamos com você à commune, ao CPAS, ao Office des Étrangers e onde for preciso — em qualquer cidade.", items: ["Inscrição na commune", "Carte de séjour", "Renovações"] },
-    { id: "consulta", title: "Consulta de orientação", dur: "30 min", desc: "Não sabe por onde começar? Uma conversa para entender sua situação e montar o plano.", items: ["Online ou presencial", "Plano de ação claro", "Orçamento na hora"] }
+  situations: [
+    { id: "carta", svc: "consulta", text: "Recebi uma carta da commune e não entendi.", advice: "Traga a carta para uma consulta de orientação: explicamos o que ela pede, qual é o prazo e o que fazer em seguida." },
+    { id: "medico", svc: "interprete", text: "Vou ao médico e não falo francês nem holandês.", advice: "Um intérprete vai com você à consulta. Agende com antecedência e anote suas dúvidas e os remédios que você toma." },
+    { id: "traduzir", svc: "traducao", text: "Pediram meus documentos traduzidos.", advice: "Envie uma foto do documento e diga qual órgão pediu a tradução: assim confirmamos se ela precisa ser juramentada." },
+    { id: "orgao", svc: "acompanhamento", text: "Tenho um compromisso na commune ou no Office des Étrangers.", advice: "Vamos juntos ao atendimento. Antes, conferimos a convocação e a lista de documentos, para você não precisar voltar." },
+    { id: "chegou", svc: "consulta", text: "Acabei de chegar e não sei por onde começar.", advice: "Na consulta de orientação montamos com você a ordem das etapas: commune, banco, mutualidade e documentos. Veja também os guias mais abaixo." },
+    { id: "reuniao", svc: "interprete", text: "Tenho uma reunião na escola, com advogado ou no trabalho.", advice: "Um intérprete participa da reunião com você, para que nenhum detalhe se perca." }
   ],
-  help: {
-    traducao: "Envie seu documento para orçamento ou agende uma conversa rápida.",
-    admin: "Resolvemos a papelada com você, passo a passo.",
-    interprete: "Um intérprete de confiança ao seu lado.",
-    acompanhamento: "Vamos com você ao órgão e cuidamos da comunicação.",
-    consulta: "Uma conversa de 30 minutos para entender tudo e montar seu plano."
-  },
+  services: [
+    { id: "traducao", title: "Traduções", dur: "Sob orçamento", desc: "Para documentos que a commune, a escola, a universidade ou o empregador pedem no idioma local.", items: ["Certidões, diplomas, históricos, CNH e contratos", "Tradução simples ou juramentada", "Legalização e apostila"] },
+    { id: "interprete", title: "Interpretação", dur: "1h – 3h", desc: "Para quando você precisa entender e ser entendido numa conversa importante.", items: ["Consultas médicas e hospital", "Advogado e notário", "Reuniões na escola e no trabalho"] },
+    { id: "acompanhamento", title: "Acompanhamento em órgãos", dur: "Presencial", desc: "Para ir a um órgão público com alguém que conhece o caminho e fala com o atendente por você.", items: ["Inscrição na commune", "Carte de séjour e renovações", "CPAS e Office des Étrangers"] },
+    { id: "consulta", title: "Consulta de orientação", dur: "30 min", desc: "Para entender sua situação antes de decidir o que fazer, ou o que contratar.", items: ["Análise da carta ou do documento que você recebeu", "Plano de ação com as próximas etapas", "Orçamento na hora, se precisar de um serviço"] }
+  ],
+  how: [
+    ["Conte o que precisa", "Agende um horário ou envie seu documento pelo site. A mensagem chega ao nosso WhatsApp já preenchida, sem você precisar explicar tudo de novo."],
+    ["Receba preço e prazo", "Respondemos pelo WhatsApp com o preço e o prazo. Você só paga depois de aprovar, por transferência bancária ou Bancontact."],
+    ["Receba o resultado", "Traduções ficam prontas no prazo escolhido no pedido: normal, rápido ou urgente. Atendimentos: confirmamos data, hora e local pelo WhatsApp e encontramos você lá."]
+  ],
+  quoteTips: [
+    "Fotografe de cima, com boa luz e o documento inteiro visível.",
+    "Envie todas as páginas, inclusive o verso se tiver carimbos ou apostila.",
+    "Aceitamos PDF ou foto (JPG, PNG).",
+    "Precisa de tradução juramentada? Avise nas observações."
+  ],
   guides: [
-    ["Primeiros dias", "Inscrição na commune: passo a passo", "O que levar, como funciona a visita do agente de bairro e prazos."],
-    ["Documentos", "Quais documentos traduzir antes de vir", "Certidões, apostila de Haia e o que pedem na Bélgica."],
-    ["Idioma", "Francês ou holandês? Entenda as regiões", "Bruxelas, Valônia e Flandres: qual idioma usar em cada lugar."],
-    ["Dia a dia", "Conta bancária, mutuelle e seguro saúde", "Como se organizar nas primeiras semanas."],
-    ["Carro", "CNH brasileira na Bélgica", "Até quando vale e como fazer a troca."],
-    ["Família", "Reagrupamento familiar", "Documentos, traduções e cuidados no processo."]
+    { tag: "Primeiros dias", title: "Inscrição na commune", tips: [
+      "Se você veio para ficar mais de 3 meses, tem 8 dias úteis após a chegada para se apresentar à commune do seu endereço.",
+      "Leve passaporte com visto, contrato de aluguel, fotos de identidade recentes e os documentos do seu tipo de visto (contrato de trabalho, matrícula etc.).",
+      "Depois do pedido, um agente de bairro (agent de quartier / wijkagent) visita o endereço para confirmar que você mora ali. Deixe seu nome visível na caixa de correio.",
+      "Guarde todos os comprovantes que a commune entregar: eles provam que seu processo está em andamento até o cartão de residência ficar pronto."
+    ] },
+    { tag: "Documentos", title: "O que providenciar ainda no Brasil", tips: [
+      "Certidões de nascimento e de casamento em inteiro teor, emitidas recentemente.",
+      "Apostila de Haia, feita em cartório no Brasil: sem ela, o documento brasileiro não tem validade na Bélgica.",
+      "Diplomas e históricos escolares, se você pretende estudar ou trabalhar na sua área.",
+      "Atestado de antecedentes criminais, quando o seu tipo de visto exigir.",
+      "Antes de traduzir, pergunte ao órgão se a tradução precisa ser juramentada na Bélgica."
+    ] },
+    { tag: "Idioma", title: "Francês ou holandês?", tips: [
+      "Flandres (norte): holandês. Valônia (sul): francês. Bruxelas: as duas línguas. No leste há também uma pequena região de língua alemã.",
+      "O idioma da sua commune é o idioma das cartas, dos formulários e do atendimento.",
+      "Em Bruxelas, você escolhe se quer ser atendido em francês ou em holandês.",
+      "Vai morar na Flandres? Comece pela nossa <a href=\"curso.html\">aula grátis de holandês</a>."
+    ] },
+    { tag: "Dia a dia", title: "Saúde, banco e emergências", tips: [
+      "Inscreva-se em uma mutualidade (mutualité / ziekenfonds) logo depois do registro: é ela que reembolsa consultas e remédios.",
+      "Escolha um médico de família (médecin généraliste / huisarts). É ele quem encaminha você aos especialistas.",
+      "Emergência: 112. Médico de plantão fora do horário comercial: 1733.",
+      "Para abrir conta, os bancos costumam pedir documento de identidade e comprovante de endereço na Bélgica.",
+      "O cartão Bancontact é o meio de pagamento mais aceito no país."
+    ] },
+    { tag: "Carro", title: "CNH brasileira na Bélgica", tips: [
+      "A troca da CNH pela carteira de motorista belga é pedida na commune onde você está inscrito.",
+      "Leve a CNH original, documento de identidade e foto.",
+      "Não deixe para a última hora: dirigir com uma habilitação que já não vale pode trazer problemas com o seguro."
+    ] },
+    { tag: "Família", title: "Reagrupamento familiar", tips: [
+      "O pedido costuma ser feito na embaixada ou no consulado da Bélgica no Brasil; em alguns casos, na commune, se o familiar já estiver legalmente na Bélgica.",
+      "Certidões de nascimento, casamento ou união estável, apostiladas e traduzidas, comprovam o vínculo familiar.",
+      "Quem chama a família normalmente precisa comprovar renda estável e suficiente, moradia adequada e seguro saúde.",
+      "As regras mudam conforme a nacionalidade de quem chama (belga, europeu ou não europeu). Confira o seu caso no site do Office des Étrangers: dofi.ibz.be."
+    ] }
+  ],
+  forWho: [
+    ["Recém-chegados", "Inscrição, documentos e primeiros passos no país."],
+    ["Famílias", "Reagrupamento familiar, escola e saúde dos filhos."],
+    ["Estudantes e trabalhadores", "Diplomas, contratos e renovação da carte de séjour."],
+    ["Quem já mora aqui", "Uma carta, uma consulta ou um processo pontual."]
   ],
   faq: [
-    ["Vocês fazem tradução juramentada (oficial)?", "Sim, trabalhamos com tradutores juramentados reconhecidos na Bélgica para documentos que exigem validade oficial. Informe isso no pedido de orçamento."],
-    ["Quanto tempo leva uma tradução?", "Normalmente de 5 a 7 dias úteis. Oferecemos opções rápidas e urgentes, conforme o documento."],
-    ["O atendimento pode ser online?", "Sim. Consultas e orientações podem ser feitas por videochamada. Acompanhamentos em órgãos são presenciais."],
-    ["Em quais cidades vocês atendem presencialmente?", "Atendemos em todas as cidades da Bélgica — Bruxelas, Antuérpia, Gent, Liège, Charleroi, Namur, Leuven, Bruges e onde você estiver. Consultas também podem ser feitas online."],
-    ["Como funciona o pagamento?", "Após o orçamento aprovado, enviamos as instruções de pagamento. Aceitamos transferência bancária e Bancontact."]
+    ["Qual a diferença entre tradução simples e juramentada?", "A juramentada é feita por um tradutor juramentado reconhecido na Bélgica e tem validade oficial: é a que communes, tribunais e universidades costumam exigir. A simples serve para entender um documento ou para uso não oficial. Na dúvida, pergunte ao órgão ou a nós."],
+    ["Em que dias vocês atendem?", "De segunda a sexta, de manhã e à tarde. Os horários livres aparecem no agendamento."]
   ]
 },
 
 /* ============================ FRANÇAIS ============================ */
 fr: {
   meta: { locale: "fr-BE", title: "Mancini Expat — Votre vie en Belgique, en plus simple",
-    desc: "Traductions, interprétation et accompagnement pour les Brésiliens en Belgique. Prenez rendez-vous en ligne." },
+    desc: "Traductions, interprétation et accompagnement dans les administrations pour les Brésiliens en Belgique. Prenez rendez-vous en ligne." },
   t: {
-    "nav.services": "Services", "nav.how": "Comment ça marche", "nav.arriving": "Arriver en Belgique", "nav.about": "À propos", "nav.faq": "FAQ",
+    "nav.services": "Services", "nav.how": "Comment ça marche", "nav.guides": "Guides", "nav.about": "À propos", "nav.faq": "FAQ", "nav.course": "Néerlandais gratuit",
     "btn.book": "Rendez-vous",
     "hero.kicker": "Brésil &nbsp;→&nbsp; Belgique",
     "hero.title": "Votre vie en Belgique, <em>en plus simple.</em>",
-    "hero.text": "Traductions, interprétation et accompagnement pour les Brésiliens en Belgique. Un service clair, humain et sans complications.",
-    "hero.book": "Prendre rendez-vous", "hero.send": "Envoyer mon document",
-    "trust.1": "Service en portugais, français et néerlandais", "trust.2": "Partout en Belgique", "trust.3": "Documents traités en toute confidentialité", "trust.4": "Português · Français · Nederlands",
+    "hero.text": "Traductions, interprétation et accompagnement dans les administrations pour les Brésiliens en Belgique.",
+    "hero.book": "Prendre rendez-vous", "hero.send": "Envoyer un document",
+    "trust.1": "Partout en Belgique", "trust.2": "Service en personne", "trust.3": "Traduction simple ou jurée",
     "help.eyebrow": "Commencez ici", "help.title": "Comment pouvons-nous vous aider ?",
-    "help.lead": "Choisissez l'option qui correspond le mieux à votre situation. Nous vous indiquons la bonne démarche.",
-    "help.o1": "Je dois faire traduire un document", "help.o2": "J'ai besoin d'aide pour mes démarches administratives", "help.o3": "J'ai besoin d'un interprète",
-    "help.o4": "Je veux être accompagné à la commune / dans une administration", "help.o5": "Je ne sais pas exactement ce dont j'ai besoin",
-    "help.rec": "Nous vous recommandons :", "help.bookNow": "Réserver maintenant",
-    "svc.eyebrow": "Services", "svc.title": "Tout ce qu'il faut pour vous installer",
-    "svc.lead": "De la traduction de votre premier document jusqu'au jour où vous vous débrouillez seul.",
-    "steps.eyebrow": "Comment ça marche", "steps.title": "Trois étapes. Sans complications.", "steps.lead": "Vous nous dites ce dont vous avez besoin — nous nous occupons du reste.",
-    "steps.1t": "Dites-nous ce qu'il vous faut", "steps.1p": "Prenez rendez-vous ou envoyez votre document via le site. Moins de 2 minutes.",
-    "steps.2t": "Recevez conseils et devis", "steps.2p": "Nous analysons votre situation et vous envoyons un devis clair, sans surprises.",
-    "steps.3t": "Nous nous occupons de tout", "steps.3p": "Nous traduisons, accompagnons et réglons — vous recevez tout prêt.",
+    "help.lead": "Vous ne savez pas quel service demander ? Choisissez la situation qui ressemble le plus à la vôtre.",
+    "help.rec": "Nous vous recommandons :",
+    "svc.eyebrow": "Services", "svc.title": "Ce que nous faisons",
+    "svc.lead": "Les traductions se font sur devis ; les autres services, sur rendez-vous.",
+    "how.eyebrow": "Comment ça marche", "how.title": "De la demande au résultat",
+    "how.lead": "Ce qui se passe après votre prise de contact.",
     "q.eyebrow": "Devis", "q.title": "Envoyez votre document et recevez un devis",
-    "q.lead": "Pas besoin d'appeler ni de tout expliquer. Envoyez une photo ou un PDF, indiquez la langue et le délai.",
-    "q.c1": "Actes de naissance, de mariage et extraits de casier judiciaire", "q.c2": "Diplômes, relevés de notes et documents scolaires",
-    "q.c3": "Permis de conduire, contrats, procurations et documents personnels", "q.c4": "Portugais ⇄ français, néerlandais et anglais",
+    "q.lead": "Indiquez la langue et pour quand vous en avez besoin. Nous répondons par WhatsApp.",
+    "q.tipsTitle": "Pour un devis rapide",
     "f.name": "Nom", "f.email": "E-mail", "f.doc": "Type de document",
     "f.doc1": "Acte / certificat", "f.doc2": "Diplôme / relevé de notes", "f.doc3": "Permis de conduire", "f.doc4": "Contrat / procuration", "f.doc5": "Autre",
     "f.to": "Traduire vers", "l.fr": "Français", "l.nl": "Néerlandais", "l.en": "Anglais", "l.pt": "Portugais",
@@ -125,89 +156,125 @@ fr: {
     "f.files": "Document(s)", "f.drop": "📎 Cliquez pour joindre un PDF ou une photo", "f.notes": "Remarques (facultatif)",
     "q.submit": "Demander un devis", "q.note": "🔒 Vos documents sont utilisés uniquement pour le devis et le service.",
     "g.eyebrow": "J'arrive en Belgique", "g.title": "Guides pour vos premiers pas",
-    "g.lead": "Des informations claires sur tout ce qu'il faut régler en arrivant en Belgique.",
+    "g.lead": "Des conseils pratiques sur ce qu'il faut régler en arrivant. Touchez un guide pour l'ouvrir.",
     "a.eyebrow": "À propos", "a.title": "Des Brésiliens au service des Brésiliens en Belgique",
-    "a.lead": "Mancini Expat est née de l'expérience de ceux qui ont déjà affronté l'administration belge et savent à quel point elle peut être déroutante. Notre objectif : que vous vous sentiez accueilli, compreniez chaque étape et régliez tout en toute sérénité.",
-    "a.v1": "Clarté", "a.v1s": "Vous savez toujours où en est votre dossier.",
-    "a.v2": "Confidentialité", "a.v2s": "Vos documents sont traités avec soin.",
-    "a.v3": "Rapidité", "a.v3s": "Réponses rapides, délais respectés.",
-    "a.v4": "Proximité", "a.v4s": "Un service humain, dans votre langue.",
+    "a.lead": "Mancini Expat est née de l'expérience de ceux qui ont déjà affronté l'administration belge et savent à quel point elle peut être déroutante. Notre objectif : que vous compreniez chaque étape et régliez tout en toute sérénité.",
+    "a.forWho": "Pour qui",
     "faq.eyebrow": "Questions fréquentes", "faq.title": "Questions fréquentes",
-    "cta.title": "Prêt à avancer ?", "cta.text": "Réservez en quelques clics. Nous répondons rapidement.",
-    "foot.tag": "Traductions et assistance pour les Brésiliens partout en Belgique.", "foot.contact": "Contact",
-    "foot.s1": "Traductions", "foot.s2": "Interprétation", "foot.s3": "Accompagnement", "foot.s4": "Assistance administrative", "foot.country": "Belgique",
+    "cta.title": "Un courrier, un délai ou un rendez-vous à venir ?", "cta.text": "Contactez-nous avant le jour J : nous aurons le temps de tout préparer.",
+    "foot.tag": "L'administration belge, expliquée en portugais.", "foot.site": "Site", "foot.contact": "Contact", "foot.country": "Belgique",
     "m.eyebrow": "Rendez-vous",
-    "m.pres": "En personne", "m.presSub": "Dans toutes les villes de Belgique",
     "m.fullname": "Nom complet", "m.need": "Décrivez brièvement votre besoin", "m.confirm": "Confirmer le rendez-vous",
     "m.success": "Demande de rendez-vous envoyée !", "m.successText": "Nous vous confirmerons l'horaire par WhatsApp très bientôt.",
     "m.close": "Fermer", "m.back": "Retour"
   },
   steps: ["", "Étape 1 sur 3 — Service", "", "Étape 2 sur 3 — Date et heure", "Étape 3 sur 3 — Vos coordonnées", ""],
   titles: ["", "Choisissez le service", "", "Choisissez la date et l'heure", "Confirmez vos coordonnées", ""],
-  sum: { service: "Service", mode: "Format", date: "Date", time: "Heure" },
+  sum: { service: "Service", date: "Date", time: "Heure" },
   wa: {
     hello: "Bonjour ! Je viens du site de Mancini Expat et j'aimerais avoir plus d'informations.",
     quote: "Bonjour ! Je souhaite un devis de traduction.", book: "Bonjour ! Je souhaite confirmer un rendez-vous.",
     name: "Nom", phone: "WhatsApp", email: "E-mail", doc: "Document", lang: "Langue", urg: "Délai", files: "Fichiers", notes: "Remarques",
     sendFiles: "(J'envoie les fichiers juste après.)"
   },
-  services: [
-    { id: "traducao", title: "Traductions", dur: "Sur devis", desc: "Traduction de documents personnels et officiels entre le portugais, le français, le néerlandais et l'anglais.", items: ["Actes et diplômes", "Traduction jurée", "Légalisation et apostille"] },
-    { id: "interprete", title: "Interprétation", dur: "1 h – 3 h", desc: "Un interprète à vos côtés chez le médecin, en réunion, chez le notaire ou lors d'entretiens.", items: ["Médecin et hôpital", "Avocat et notaire", "École et travail"] },
-    { id: "acompanhamento", title: "Accompagnement administratif", dur: "En personne", desc: "Nous vous accompagnons à la commune, au CPAS, à l'Office des Étrangers et partout où il le faut — dans toute la Belgique.", items: ["Inscription à la commune", "Carte de séjour", "Renouvellements"] },
-    { id: "consulta", title: "Consultation d'orientation", dur: "30 min", desc: "Vous ne savez pas par où commencer ? Un entretien pour comprendre votre situation et établir un plan.", items: ["En ligne ou en personne", "Plan d'action clair", "Devis immédiat"] }
+  situations: [
+    { id: "carta", svc: "consulta", text: "J'ai reçu un courrier de la commune et je ne le comprends pas.", advice: "Apportez le courrier à une consultation d'orientation : nous vous expliquons ce qu'il demande, le délai et la marche à suivre." },
+    { id: "medico", svc: "interprete", text: "Je vais chez le médecin et je ne parle ni français ni néerlandais.", advice: "Un interprète vous accompagne à la consultation. Réservez à l'avance et notez vos questions et vos médicaments." },
+    { id: "traduzir", svc: "traducao", text: "On me demande mes documents traduits.", advice: "Envoyez une photo du document et indiquez quelle administration demande la traduction : nous vérifierons si elle doit être jurée." },
+    { id: "orgao", svc: "acompanhamento", text: "J'ai un rendez-vous à la commune ou à l'Office des Étrangers.", advice: "Nous y allons ensemble. Avant, nous vérifions la convocation et la liste des documents pour éviter de devoir revenir." },
+    { id: "chegou", svc: "consulta", text: "Je viens d'arriver et je ne sais pas par où commencer.", advice: "Lors de la consultation d'orientation, nous établissons avec vous l'ordre des démarches : commune, banque, mutualité et documents. Consultez aussi les guides plus bas." },
+    { id: "reuniao", svc: "interprete", text: "J'ai une réunion à l'école, chez un avocat ou au travail.", advice: "Un interprète participe à la réunion avec vous, pour qu'aucun détail ne se perde." }
   ],
-  help: {
-    traducao: "Envoyez votre document pour un devis ou réservez un court entretien.",
-    admin: "Nous réglons la paperasse avec vous, étape par étape.",
-    interprete: "Un interprète de confiance à vos côtés.",
-    acompanhamento: "Nous vous accompagnons et gérons la communication pour vous.",
-    consulta: "Un entretien de 30 minutes pour tout comprendre et établir votre plan."
-  },
+  services: [
+    { id: "traducao", title: "Traductions", dur: "Sur devis", desc: "Pour les documents que la commune, l'école, l'université ou l'employeur demandent dans la langue locale.", items: ["Actes, diplômes, relevés de notes, permis et contrats", "Traduction simple ou jurée", "Légalisation et apostille"] },
+    { id: "interprete", title: "Interprétation", dur: "1 h – 3 h", desc: "Quand vous devez comprendre et être compris lors d'un échange important.", items: ["Consultations médicales et hôpital", "Avocat et notaire", "Réunions à l'école et au travail"] },
+    { id: "acompanhamento", title: "Accompagnement administratif", dur: "En personne", desc: "Pour vous rendre dans une administration avec quelqu'un qui connaît les démarches et parle à l'agent pour vous.", items: ["Inscription à la commune", "Carte de séjour et renouvellements", "CPAS et Office des Étrangers"] },
+    { id: "consulta", title: "Consultation d'orientation", dur: "30 min", desc: "Pour comprendre votre situation avant de décider quoi faire, ou quel service demander.", items: ["Analyse du courrier ou du document reçu", "Plan d'action avec les prochaines étapes", "Devis immédiat si un service est nécessaire"] }
+  ],
+  how: [
+    ["Dites-nous ce qu'il vous faut", "Prenez rendez-vous ou envoyez votre document via le site. Le message arrive sur notre WhatsApp déjà rempli, sans devoir tout réexpliquer."],
+    ["Recevez le prix et le délai", "Nous vous répondons par WhatsApp avec le prix et le délai. Vous ne payez qu'après avoir accepté le devis, par virement bancaire ou Bancontact."],
+    ["Recevez le résultat", "Les traductions sont prêtes dans le délai choisi lors de la demande : normal, rapide ou urgent. Rendez-vous : nous confirmons la date, l'heure et le lieu par WhatsApp et nous vous retrouvons sur place."]
+  ],
+  quoteTips: [
+    "Photographiez le document à plat, avec une bonne lumière et en entier.",
+    "Envoyez toutes les pages, y compris le verso s'il porte des cachets ou une apostille.",
+    "Nous acceptons les PDF et les photos (JPG, PNG).",
+    "Besoin d'une traduction jurée ? Indiquez-le dans les remarques."
+  ],
   guides: [
-    ["Premiers jours", "Inscription à la commune : étape par étape", "Quoi apporter, la visite de l'agent de quartier et les délais."],
-    ["Documents", "Quels documents traduire avant de venir", "Actes, apostille de La Haye et ce qui est demandé en Belgique."],
-    ["Langue", "Français ou néerlandais ? Comprendre les régions", "Bruxelles, Wallonie et Flandre : quelle langue utiliser où."],
-    ["Quotidien", "Compte bancaire, mutuelle et assurance santé", "Bien s'organiser pendant les premières semaines."],
-    ["Voiture", "Permis de conduire brésilien en Belgique", "Jusqu'à quand il est valable et comment l'échanger."],
-    ["Famille", "Regroupement familial", "Documents, traductions et points d'attention."]
+    { tag: "Premiers jours", title: "Inscription à la commune", tips: [
+      "Si vous venez pour plus de 3 mois, vous avez 8 jours ouvrables après votre arrivée pour vous présenter à la commune de votre domicile.",
+      "Apportez votre passeport avec visa, le bail, des photos d'identité récentes et les documents liés à votre type de visa (contrat de travail, inscription aux études…).",
+      "Après la demande, l'agent de quartier passe à votre adresse pour vérifier que vous y habitez. Mettez votre nom sur la boîte aux lettres.",
+      "Conservez tous les documents remis par la commune : ils prouvent que votre dossier est en cours jusqu'à la délivrance de la carte de séjour."
+    ] },
+    { tag: "Documents", title: "Ce qu'il faut préparer au Brésil", tips: [
+      "Actes de naissance et de mariage en copie intégrale (inteiro teor), récemment délivrés.",
+      "Apostille de La Haye, faite dans un cartório au Brésil : sans elle, le document brésilien n'est pas valable en Belgique.",
+      "Diplômes et relevés de notes, si vous comptez étudier ou travailler dans votre domaine.",
+      "Extrait de casier judiciaire, lorsque votre type de visa l'exige.",
+      "Avant de faire traduire, demandez à l'administration si la traduction doit être jurée en Belgique."
+    ] },
+    { tag: "Langue", title: "Français ou néerlandais ?", tips: [
+      "Flandre (nord) : néerlandais. Wallonie (sud) : français. Bruxelles : les deux langues. À l'est, il existe aussi une petite région germanophone.",
+      "La langue de votre commune est celle des courriers, des formulaires et de l'accueil.",
+      "À Bruxelles, vous choisissez d'être servi en français ou en néerlandais.",
+      "Vous allez vivre en Flandre ? Commencez par notre <a href=\"curso.html\">cours gratuit de néerlandais</a> (en portugais)."
+    ] },
+    { tag: "Quotidien", title: "Santé, banque et urgences", tips: [
+      "Affiliez-vous à une mutualité dès votre inscription : c'est elle qui rembourse les consultations et les médicaments.",
+      "Choisissez un médecin généraliste. C'est lui qui vous oriente vers les spécialistes.",
+      "Urgences : 112. Médecin de garde en dehors des heures de bureau : 1733.",
+      "Pour ouvrir un compte, les banques demandent en général une pièce d'identité et une preuve d'adresse en Belgique.",
+      "La carte Bancontact est le moyen de paiement le plus accepté dans le pays."
+    ] },
+    { tag: "Voiture", title: "Permis de conduire brésilien en Belgique", tips: [
+      "L'échange contre un permis belge se demande à la commune où vous êtes inscrit.",
+      "Apportez le permis original, une pièce d'identité et une photo.",
+      "N'attendez pas le dernier moment : conduire avec un permis qui n'est plus valable peut poser problème avec l'assurance."
+    ] },
+    { tag: "Famille", title: "Regroupement familial", tips: [
+      "La demande se fait généralement à l'ambassade ou au consulat de Belgique au Brésil ; dans certains cas, à la commune si le membre de la famille séjourne déjà légalement en Belgique.",
+      "Les actes de naissance, de mariage ou de cohabitation, apostillés et traduits, prouvent le lien familial.",
+      "La personne qui fait venir sa famille doit en principe prouver des revenus stables et suffisants, un logement adapté et une assurance maladie.",
+      "Les règles varient selon la nationalité de la personne qui fait venir sa famille (belge, européenne ou non européenne). Vérifiez votre cas sur le site de l'Office des Étrangers : dofi.ibz.be."
+    ] }
+  ],
+  forWho: [
+    ["Nouveaux arrivants", "Inscription, documents et premiers pas dans le pays."],
+    ["Familles", "Regroupement familial, école et santé des enfants."],
+    ["Étudiants et travailleurs", "Diplômes, contrats et renouvellement de la carte de séjour."],
+    ["Résidents de longue date", "Un courrier, une consultation ou une démarche ponctuelle."]
   ],
   faq: [
-    ["Proposez-vous des traductions jurées (officielles) ?", "Oui, nous travaillons avec des traducteurs jurés reconnus en Belgique pour les documents qui doivent avoir une valeur officielle. Précisez-le dans votre demande de devis."],
-    ["Combien de temps prend une traduction ?", "En général de 5 à 7 jours ouvrables. Des options rapides et urgentes sont possibles selon le document."],
-    ["Le rendez-vous peut-il se faire en ligne ?", "Oui. Les consultations et conseils peuvent se faire par appel vidéo. Les accompagnements dans les administrations se font en personne."],
-    ["Dans quelles villes intervenez-vous en personne ?", "Dans toutes les villes de Belgique — Bruxelles, Anvers, Gand, Liège, Charleroi, Namur, Louvain, Bruges et partout où vous êtes. Les consultations peuvent aussi se faire en ligne."],
-    ["Comment se passe le paiement ?", "Après acceptation du devis, nous vous envoyons les instructions de paiement. Nous acceptons le virement bancaire et Bancontact."]
+    ["Quelle est la différence entre une traduction simple et une traduction jurée ?", "La traduction jurée est réalisée par un traducteur juré reconnu en Belgique et a une valeur officielle : c'est celle qu'exigent généralement les communes, les tribunaux et les universités. La traduction simple sert à comprendre un document ou à un usage non officiel. En cas de doute, demandez à l'administration ou à nous."],
+    ["Quels jours travaillez-vous ?", "Du lundi au vendredi, le matin et l'après-midi. Les créneaux libres apparaissent lors de la prise de rendez-vous."]
   ]
 },
 
 /* ============================ NEDERLANDS ============================ */
 nl: {
   meta: { locale: "nl-BE", title: "Mancini Expat — Uw leven in België, eenvoudiger",
-    desc: "Vertalingen, tolken en begeleiding voor Brazilianen in België. Maak online een afspraak." },
+    desc: "Vertalingen, tolken en begeleiding bij diensten voor Brazilianen in België. Maak online een afspraak." },
   t: {
-    "nav.services": "Diensten", "nav.how": "Hoe het werkt", "nav.arriving": "Aankomen in België", "nav.about": "Over ons", "nav.faq": "FAQ",
+    "nav.services": "Diensten", "nav.how": "Hoe het werkt", "nav.guides": "Gidsen", "nav.about": "Over ons", "nav.faq": "FAQ", "nav.course": "Gratis les Nederlands",
     "btn.book": "Afspraak",
     "hero.kicker": "Brazilië &nbsp;→&nbsp; België",
     "hero.title": "Uw leven in België, <em>eenvoudiger.</em>",
-    "hero.text": "Vertalingen, tolken en begeleiding voor Brazilianen in België. Duidelijk, persoonlijk en zonder gedoe.",
-    "hero.book": "Afspraak maken", "hero.send": "Mijn document versturen",
-    "trust.1": "Service in het Portugees, Frans en Nederlands", "trust.2": "In heel België", "trust.3": "Documenten vertrouwelijk behandeld", "trust.4": "Português · Français · Nederlands",
+    "hero.text": "Vertalingen, tolken en begeleiding bij diensten voor Brazilianen in België.",
+    "hero.book": "Afspraak maken", "hero.send": "Document versturen",
+    "trust.1": "In heel België", "trust.2": "Persoonlijk ter plaatse", "trust.3": "Gewone of beëdigde vertaling",
     "help.eyebrow": "Begin hier", "help.title": "Hoe kunnen we u helpen?",
-    "help.lead": "Kies de optie die het best bij uw situatie past. Wij wijzen u de juiste weg.",
-    "help.o1": "Ik wil een document laten vertalen", "help.o2": "Ik heb hulp nodig met papierwerk / administratie", "help.o3": "Ik heb een tolk nodig",
-    "help.o4": "Ik wil begeleiding naar de gemeente / een dienst", "help.o5": "Ik weet niet precies wat ik nodig heb",
-    "help.rec": "Wij raden aan:", "help.bookNow": "Nu reserveren",
-    "svc.eyebrow": "Diensten", "svc.title": "Alles wat u nodig heeft om u te vestigen",
-    "svc.lead": "Van de vertaling van uw eerste document tot de dag dat u alles zelf regelt.",
-    "steps.eyebrow": "Hoe het werkt", "steps.title": "Drie stappen. Zonder gedoe.", "steps.lead": "U vertelt ons wat u nodig heeft — wij doen de rest.",
-    "steps.1t": "Vertel wat u nodig heeft", "steps.1p": "Maak een afspraak of stuur uw document via de website. Minder dan 2 minuten.",
-    "steps.2t": "Ontvang advies en offerte", "steps.2p": "We bekijken uw situatie en sturen een duidelijke offerte, zonder verrassingen.",
-    "steps.3t": "Wij regelen de rest", "steps.3p": "We vertalen, begeleiden en lossen op — u krijgt alles kant-en-klaar.",
+    "help.lead": "Weet u niet welke dienst u nodig heeft? Kies de situatie die het meest op de uwe lijkt.",
+    "help.rec": "Wij raden aan:",
+    "svc.eyebrow": "Diensten", "svc.title": "Wat we doen",
+    "svc.lead": "Vertalingen gebeuren op offerte; de andere diensten op afspraak.",
+    "how.eyebrow": "Hoe het werkt", "how.title": "Van aanvraag tot resultaat",
+    "how.lead": "Wat er gebeurt nadat u contact opneemt.",
     "q.eyebrow": "Offerte", "q.title": "Stuur uw document en ontvang een offerte",
-    "q.lead": "U hoeft niet te bellen of alles uit te leggen. Stuur een foto of pdf, vermeld de taal en wanneer u het nodig heeft.",
-    "q.c1": "Geboorte- en huwelijksakten, uittreksels strafregister", "q.c2": "Diploma's, puntenlijsten en schooldocumenten",
-    "q.c3": "Rijbewijzen, contracten, volmachten en persoonlijke documenten", "q.c4": "Portugees ⇄ Frans, Nederlands en Engels",
+    "q.lead": "Vermeld de taal en tegen wanneer u het nodig heeft. We antwoorden via WhatsApp.",
+    "q.tipsTitle": "Voor een snelle offerte",
     "f.name": "Naam", "f.email": "E-mail", "f.doc": "Soort document",
     "f.doc1": "Akte / attest", "f.doc2": "Diploma / puntenlijst", "f.doc3": "Rijbewijs", "f.doc4": "Contract / volmacht", "f.doc5": "Andere",
     "f.to": "Vertalen naar", "l.fr": "Frans", "l.nl": "Nederlands", "l.en": "Engels", "l.pt": "Portugees",
@@ -215,89 +282,125 @@ nl: {
     "f.files": "Document(en)", "f.drop": "📎 Klik om een pdf of foto toe te voegen", "f.notes": "Opmerkingen (optioneel)",
     "q.submit": "Offerte aanvragen", "q.note": "🔒 Uw documenten worden alleen gebruikt voor de offerte en de dienst.",
     "g.eyebrow": "Ik kom naar België", "g.title": "Gidsen voor uw eerste stappen",
-    "g.lead": "Duidelijke informatie over alles wat u moet regelen bij aankomst in België.",
+    "g.lead": "Praktische tips over wat u moet regelen bij aankomst. Tik op een gids om hem te openen.",
     "a.eyebrow": "Over ons", "a.title": "Brazilianen die Brazilianen helpen in België",
-    "a.lead": "Mancini Expat is ontstaan uit de ervaring van mensen die de Belgische administratie zelf hebben doorlopen en weten hoe verwarrend die kan zijn. Ons doel: dat u zich welkom voelt, elke stap begrijpt en alles zorgeloos regelt.",
-    "a.v1": "Duidelijkheid", "a.v1s": "U weet altijd hoe uw dossier ervoor staat.",
-    "a.v2": "Vertrouwelijkheid", "a.v2s": "Uw documenten worden zorgvuldig behandeld.",
-    "a.v3": "Snelheid", "a.v3s": "Snelle antwoorden, termijnen gerespecteerd.",
-    "a.v4": "Persoonlijk", "a.v4s": "Menselijke service, in uw taal.",
+    "a.lead": "Mancini Expat is ontstaan uit de ervaring van mensen die de Belgische administratie zelf hebben doorlopen en weten hoe verwarrend die kan zijn. Ons doel: dat u elke stap begrijpt en alles zorgeloos regelt.",
+    "a.forWho": "Voor wie",
     "faq.eyebrow": "Veelgestelde vragen", "faq.title": "Veelgestelde vragen",
-    "cta.title": "Klaar om het te regelen?", "cta.text": "Reserveer in een paar klikken. We antwoorden snel.",
-    "foot.tag": "Vertalingen en hulp voor Brazilianen in heel België.", "foot.contact": "Contact",
-    "foot.s1": "Vertalingen", "foot.s2": "Tolken", "foot.s3": "Begeleiding", "foot.s4": "Administratieve hulp", "foot.country": "België",
+    "cta.title": "Een brief, een termijn of een afspraak op komst?", "cta.text": "Neem vóór de dag zelf contact op: dan hebben we tijd om alles rustig voor te bereiden.",
+    "foot.tag": "De Belgische administratie, uitgelegd in het Portugees.", "foot.site": "Website", "foot.contact": "Contact", "foot.country": "België",
     "m.eyebrow": "Afspraak",
-    "m.pres": "Ter plaatse", "m.presSub": "In elke stad in België",
     "m.fullname": "Volledige naam", "m.need": "Beschrijf kort wat u nodig heeft", "m.confirm": "Afspraak bevestigen",
     "m.success": "Afspraakaanvraag verstuurd!", "m.successText": "We bevestigen uw tijdstip binnenkort via WhatsApp.",
     "m.close": "Sluiten", "m.back": "Terug"
   },
   steps: ["", "Stap 1 van 3 — Dienst", "", "Stap 2 van 3 — Datum en uur", "Stap 3 van 3 — Uw gegevens", ""],
   titles: ["", "Kies de dienst", "", "Kies datum en uur", "Bevestig uw gegevens", ""],
-  sum: { service: "Dienst", mode: "Vorm", date: "Datum", time: "Uur" },
+  sum: { service: "Dienst", date: "Datum", time: "Uur" },
   wa: {
     hello: "Hallo! Ik kom via de website van Mancini Expat en wil graag meer informatie.",
     quote: "Hallo! Ik wil graag een offerte voor een vertaling.", book: "Hallo! Ik wil graag een afspraak bevestigen.",
     name: "Naam", phone: "WhatsApp", email: "E-mail", doc: "Document", lang: "Taal", urg: "Termijn", files: "Bestanden", notes: "Opmerkingen",
     sendFiles: "(Ik stuur de bestanden meteen door.)"
   },
-  services: [
-    { id: "traducao", title: "Vertalingen", dur: "Op offerte", desc: "Vertaling van persoonlijke en officiële documenten tussen Portugees, Frans, Nederlands en Engels.", items: ["Akten en diploma's", "Beëdigde vertaling", "Legalisatie en apostille"] },
-    { id: "interprete", title: "Tolken", dur: "1 u – 3 u", desc: "Een tolk aan uw zijde bij de dokter, op vergaderingen, bij de notaris of tijdens gesprekken.", items: ["Dokter en ziekenhuis", "Advocaat en notaris", "School en werk"] },
-    { id: "acompanhamento", title: "Begeleiding bij diensten", dur: "Ter plaatse", desc: "We gaan met u mee naar de gemeente, het OCMW, de Dienst Vreemdelingenzaken en waar nodig — in heel België.", items: ["Inschrijving bij de gemeente", "Verblijfskaart", "Verlengingen"] },
-    { id: "consulta", title: "Oriënterend gesprek", dur: "30 min", desc: "Weet u niet waar te beginnen? Een gesprek om uw situatie te begrijpen en een plan op te stellen.", items: ["Online of ter plaatse", "Duidelijk actieplan", "Meteen een offerte"] }
+  situations: [
+    { id: "carta", svc: "consulta", text: "Ik kreeg een brief van de gemeente en begrijp hem niet.", advice: "Breng de brief mee naar een oriënterend gesprek: we leggen uit wat er gevraagd wordt, wat de termijn is en wat u daarna moet doen." },
+    { id: "medico", svc: "interprete", text: "Ik ga naar de dokter en spreek geen Frans of Nederlands.", advice: "Een tolk gaat met u mee naar de consultatie. Boek op voorhand en noteer uw vragen en de medicatie die u neemt." },
+    { id: "traduzir", svc: "traducao", text: "Men vraagt mijn documenten vertaald.", advice: "Stuur een foto van het document en vermeld welke dienst de vertaling vraagt: zo kunnen we nagaan of ze beëdigd moet zijn." },
+    { id: "orgao", svc: "acompanhamento", text: "Ik heb een afspraak bij de gemeente of de Dienst Vreemdelingenzaken.", advice: "We gaan samen. Vooraf controleren we de oproeping en de lijst met documenten, zodat u niet terug hoeft te komen." },
+    { id: "chegou", svc: "consulta", text: "Ik ben net aangekomen en weet niet waar te beginnen.", advice: "Tijdens het oriënterend gesprek bepalen we samen de volgorde van de stappen: gemeente, bank, ziekenfonds en documenten. Bekijk ook de gidsen hieronder." },
+    { id: "reuniao", svc: "interprete", text: "Ik heb een vergadering op school, bij een advocaat of op het werk.", advice: "Een tolk neemt samen met u deel aan het gesprek, zodat geen enkel detail verloren gaat." }
   ],
-  help: {
-    traducao: "Stuur uw document voor een offerte of plan een kort gesprek.",
-    admin: "We regelen het papierwerk samen met u, stap voor stap.",
-    interprete: "Een betrouwbare tolk aan uw zijde.",
-    acompanhamento: "We gaan met u mee en zorgen voor de communicatie.",
-    consulta: "Een gesprek van 30 minuten om alles te begrijpen en uw plan op te stellen."
-  },
+  services: [
+    { id: "traducao", title: "Vertalingen", dur: "Op offerte", desc: "Voor documenten die de gemeente, school, universiteit of werkgever in de landstaal vraagt.", items: ["Akten, diploma's, puntenlijsten, rijbewijzen en contracten", "Gewone of beëdigde vertaling", "Legalisatie en apostille"] },
+    { id: "interprete", title: "Tolken", dur: "1 u – 3 u", desc: "Wanneer u iemand moet begrijpen en zelf begrepen moet worden in een belangrijk gesprek.", items: ["Dokter en ziekenhuis", "Advocaat en notaris", "Vergaderingen op school en op het werk"] },
+    { id: "acompanhamento", title: "Begeleiding bij diensten", dur: "Ter plaatse", desc: "Om naar een overheidsdienst te gaan met iemand die de weg kent en voor u met de medewerker praat.", items: ["Inschrijving bij de gemeente", "Verblijfskaart en verlengingen", "OCMW en Dienst Vreemdelingenzaken"] },
+    { id: "consulta", title: "Oriënterend gesprek", dur: "30 min", desc: "Om uw situatie te begrijpen voor u beslist wat u doet, of welke dienst u nodig heeft.", items: ["Analyse van de brief of het document dat u kreeg", "Actieplan met de volgende stappen", "Meteen een offerte als u een dienst nodig heeft"] }
+  ],
+  how: [
+    ["Vertel wat u nodig heeft", "Maak een afspraak of stuur uw document via de website. Het bericht komt al ingevuld binnen op onze WhatsApp, zonder dat u alles opnieuw moet uitleggen."],
+    ["Ontvang prijs en termijn", "We antwoorden via WhatsApp met de prijs en de termijn. U betaalt pas nadat u de offerte goedkeurt, via overschrijving of Bancontact."],
+    ["Ontvang het resultaat", "Vertalingen zijn klaar binnen de termijn die u bij de aanvraag koos: normaal, snel of dringend. Afspraken: we bevestigen datum, uur en plaats via WhatsApp en ontmoeten u ter plaatse."]
+  ],
+  quoteTips: [
+    "Fotografeer het document van bovenaf, met goed licht en volledig in beeld.",
+    "Stuur alle pagina's, ook de achterkant als daar stempels of een apostille op staan.",
+    "We aanvaarden pdf's en foto's (JPG, PNG).",
+    "Hebt u een beëdigde vertaling nodig? Vermeld het bij de opmerkingen."
+  ],
   guides: [
-    ["Eerste dagen", "Inschrijving bij de gemeente: stap voor stap", "Wat meebrengen, het bezoek van de wijkagent en de termijnen."],
-    ["Documenten", "Welke documenten vertalen vóór u komt", "Akten, apostille van Den Haag en wat België vraagt."],
-    ["Taal", "Frans of Nederlands? De regio's uitgelegd", "Brussel, Wallonië en Vlaanderen: welke taal waar."],
-    ["Dagelijks leven", "Bankrekening, ziekenfonds en verzekering", "Goed georganiseerd in de eerste weken."],
-    ["Auto", "Braziliaans rijbewijs in België", "Hoe lang het geldig is en hoe u het omwisselt."],
-    ["Gezin", "Gezinshereniging", "Documenten, vertalingen en aandachtspunten."]
+    { tag: "Eerste dagen", title: "Inschrijving bij de gemeente", tips: [
+      "Komt u voor meer dan 3 maanden? Dan moet u zich binnen 8 werkdagen na aankomst aanmelden bij de gemeente van uw adres.",
+      "Breng uw paspoort met visum, het huurcontract, recente pasfoto's en de documenten van uw type visum mee (arbeidscontract, inschrijving als student…).",
+      "Na de aanvraag komt de wijkagent langs om te controleren of u echt op dat adres woont. Zet uw naam op de brievenbus.",
+      "Bewaar alle documenten die de gemeente u geeft: ze bewijzen dat uw dossier loopt tot uw verblijfskaart klaar is."
+    ] },
+    { tag: "Documenten", title: "Wat u nog in Brazilië regelt", tips: [
+      "Volledige afschriften (inteiro teor) van uw geboorte- en huwelijksakte, recent afgeleverd.",
+      "Apostille van Den Haag, aangevraagd bij een cartório in Brazilië: zonder apostille is een Braziliaans document niet geldig in België.",
+      "Diploma's en puntenlijsten, als u in uw vakgebied wilt studeren of werken.",
+      "Uittreksel uit het strafregister, wanneer uw type visum dat vraagt.",
+      "Vraag vóór u laat vertalen aan de dienst of de vertaling in België beëdigd moet zijn."
+    ] },
+    { tag: "Taal", title: "Frans of Nederlands?", tips: [
+      "Vlaanderen (noorden): Nederlands. Wallonië (zuiden): Frans. Brussel: beide talen. In het oosten is er ook een kleine Duitstalige regio.",
+      "De taal van uw gemeente is de taal van de brieven, de formulieren en het loket.",
+      "In Brussel kiest u zelf of u in het Frans of in het Nederlands geholpen wordt.",
+      "Gaat u in Vlaanderen wonen? Begin met onze <a href=\"curso.html\">gratis les Nederlands</a> (in het Portugees)."
+    ] },
+    { tag: "Dagelijks leven", title: "Gezondheid, bank en noodgevallen", tips: [
+      "Sluit u aan bij een ziekenfonds zodra u ingeschreven bent: het ziekenfonds betaalt raadplegingen en geneesmiddelen terug.",
+      "Kies een huisarts. Die verwijst u door naar specialisten.",
+      "Noodgevallen: 112. Huisarts van wacht buiten de kantooruren: 1733.",
+      "Om een rekening te openen vragen banken meestal een identiteitsdocument en een bewijs van adres in België.",
+      "Bancontact is het meest aanvaarde betaalmiddel in het land."
+    ] },
+    { tag: "Auto", title: "Braziliaans rijbewijs in België", tips: [
+      "De omwisseling voor een Belgisch rijbewijs vraagt u aan bij de gemeente waar u ingeschreven bent.",
+      "Breng het originele rijbewijs, een identiteitsdocument en een pasfoto mee.",
+      "Wacht niet tot het laatste moment: rijden met een rijbewijs dat niet meer geldig is, kan problemen geven met uw verzekering."
+    ] },
+    { tag: "Gezin", title: "Gezinshereniging", tips: [
+      "De aanvraag gebeurt meestal bij de Belgische ambassade of het consulaat in Brazilië; in sommige gevallen bij de gemeente, als het familielid al legaal in België verblijft.",
+      "Geboorte-, huwelijks- of samenwoningsakten, met apostille en vertaald, bewijzen de familieband.",
+      "Wie zijn gezin laat overkomen, moet in principe stabiele en voldoende inkomsten, gepaste huisvesting en een ziekteverzekering aantonen.",
+      "De regels verschillen naargelang de nationaliteit van wie het gezin laat overkomen (Belg, EU-burger of niet-EU-burger). Bekijk uw situatie op de website van de Dienst Vreemdelingenzaken: dofi.ibz.be."
+    ] }
+  ],
+  forWho: [
+    ["Nieuwkomers", "Inschrijving, documenten en de eerste stappen in het land."],
+    ["Gezinnen", "Gezinshereniging, school en de gezondheid van de kinderen."],
+    ["Studenten en werknemers", "Diploma's, contracten en verlenging van de verblijfskaart."],
+    ["Wie hier al woont", "Een brief, een consultatie of een eenmalige procedure."]
   ],
   faq: [
-    ["Bieden jullie beëdigde (officiële) vertalingen aan?", "Ja, we werken samen met erkende beëdigde vertalers in België voor documenten die officieel geldig moeten zijn. Vermeld dit in uw offerteaanvraag."],
-    ["Hoe lang duurt een vertaling?", "Meestal 5 tot 7 werkdagen. Afhankelijk van het document zijn snelle en dringende opties mogelijk."],
-    ["Kan de afspraak online?", "Ja. Gesprekken en advies kunnen via videogesprek. Begeleiding bij diensten gebeurt ter plaatse."],
-    ["In welke steden komen jullie ter plaatse?", "In alle steden van België — Brussel, Antwerpen, Gent, Luik, Charleroi, Namen, Leuven, Brugge en waar u ook bent. Gesprekken kunnen ook online."],
-    ["Hoe verloopt de betaling?", "Na goedkeuring van de offerte sturen we u de betalingsinstructies. We aanvaarden overschrijving en Bancontact."]
+    ["Wat is het verschil tussen een gewone en een beëdigde vertaling?", "Een beëdigde vertaling wordt gemaakt door een in België erkende beëdigd vertaler en heeft officiële waarde: gemeenten, rechtbanken en universiteiten vragen meestal die versie. Een gewone vertaling dient om een document te begrijpen of voor niet-officieel gebruik. Twijfelt u? Vraag het aan de dienst of aan ons."],
+    ["Op welke dagen werken jullie?", "Van maandag tot vrijdag, in de voor- en namiddag. De vrije tijdstippen ziet u bij het maken van een afspraak."]
   ]
 },
 
 /* ============================ ENGLISH ============================ */
 en: {
   meta: { locale: "en-GB", title: "Mancini Expat — Your life in Belgium, made simpler",
-    desc: "Translations, interpreting and accompaniment for Brazilians in Belgium. Book online." },
+    desc: "Translations, interpreting and accompaniment to public offices for Brazilians in Belgium. Book online." },
   t: {
-    "nav.services": "Services", "nav.how": "How it works", "nav.arriving": "Moving to Belgium", "nav.about": "About", "nav.faq": "FAQ",
+    "nav.services": "Services", "nav.how": "How it works", "nav.guides": "Guides", "nav.about": "About", "nav.faq": "FAQ", "nav.course": "Free Dutch lesson",
     "btn.book": "Book",
     "hero.kicker": "Brazil &nbsp;→&nbsp; Belgium",
     "hero.title": "Your life in Belgium, <em>made simpler.</em>",
-    "hero.text": "Translations, interpreting and accompaniment for Brazilians in Belgium. Clear, personal and hassle-free.",
-    "hero.book": "Book an appointment", "hero.send": "Send my document",
-    "trust.1": "Service in Portuguese, French and Dutch", "trust.2": "All across Belgium", "trust.3": "Documents handled confidentially", "trust.4": "Português · Français · Nederlands",
+    "hero.text": "Translations, interpreting and accompaniment to public offices for Brazilians in Belgium.",
+    "hero.book": "Book an appointment", "hero.send": "Send a document",
+    "trust.1": "All across Belgium", "trust.2": "In-person service", "trust.3": "Standard or sworn translation",
     "help.eyebrow": "Start here", "help.title": "How can we help you?",
-    "help.lead": "Choose the option that best fits your situation. We'll point you in the right direction.",
-    "help.o1": "I need a document translated", "help.o2": "I need help with paperwork / bureaucracy", "help.o3": "I need an interpreter",
-    "help.o4": "I want someone to come with me to the commune / an office", "help.o5": "I'm not sure what I need",
-    "help.rec": "We recommend:", "help.bookNow": "Book now",
-    "svc.eyebrow": "Services", "svc.title": "Everything you need to settle in",
-    "svc.lead": "From translating your very first document to the day you can handle everything on your own.",
-    "steps.eyebrow": "How it works", "steps.title": "Three steps. No hassle.", "steps.lead": "Tell us what you need — we'll take care of the rest.",
-    "steps.1t": "Tell us what you need", "steps.1p": "Book a time or send your document through the website. It takes less than 2 minutes.",
-    "steps.2t": "Get advice and a quote", "steps.2p": "We review your situation and send a clear quote, with no surprises.",
-    "steps.3t": "We handle the rest", "steps.3p": "We translate, accompany and resolve — you get everything done.",
+    "help.lead": "Not sure which service to ask for? Pick the situation closest to yours.",
+    "help.rec": "We recommend:",
+    "svc.eyebrow": "Services", "svc.title": "What we do",
+    "svc.lead": "Translations are quoted individually; other services are by appointment.",
+    "how.eyebrow": "How it works", "how.title": "From request to result",
+    "how.lead": "What happens after you get in touch.",
     "q.eyebrow": "Quote", "q.title": "Send your document and get a quote",
-    "q.lead": "No need to call or explain everything. Send a photo or PDF, tell us the language and when you need it.",
-    "q.c1": "Birth and marriage certificates, criminal record extracts", "q.c2": "Diplomas, transcripts and school documents",
-    "q.c3": "Driving licences, contracts, powers of attorney and personal documents", "q.c4": "Portuguese ⇄ French, Dutch and English",
+    "q.lead": "Tell us the language and when you need it. We reply on WhatsApp.",
+    "q.tipsTitle": "For a fast quote",
     "f.name": "Name", "f.email": "Email", "f.doc": "Document type",
     "f.doc1": "Certificate", "f.doc2": "Diploma / transcript", "f.doc3": "Driving licence", "f.doc4": "Contract / power of attorney", "f.doc5": "Other",
     "f.to": "Translate into", "l.fr": "French", "l.nl": "Dutch", "l.en": "English", "l.pt": "Portuguese",
@@ -305,59 +408,100 @@ en: {
     "f.files": "Document(s)", "f.drop": "📎 Click to attach a PDF or photo", "f.notes": "Notes (optional)",
     "q.submit": "Request a quote", "q.note": "🔒 Your documents are only used for the quote and the service.",
     "g.eyebrow": "Moving to Belgium", "g.title": "Guides for your first steps",
-    "g.lead": "Clear information on everything you need to sort out when you arrive in Belgium.",
+    "g.lead": "Practical tips on what you need to sort out when you arrive. Tap a guide to open it.",
     "a.eyebrow": "About us", "a.title": "Brazilians helping Brazilians in Belgium",
-    "a.lead": "Mancini Expat was born from the experience of people who have been through Belgian bureaucracy themselves and know how confusing it can be. Our goal is for you to feel welcome, understand every step and get everything done with confidence.",
-    "a.v1": "Clarity", "a.v1s": "You always know what's happening.",
-    "a.v2": "Confidentiality", "a.v2s": "Your documents are handled with care.",
-    "a.v3": "Speed", "a.v3s": "Fast replies, deadlines met.",
-    "a.v4": "Personal", "a.v4s": "Human service, in your language.",
+    "a.lead": "Mancini Expat was born from the experience of people who have been through Belgian bureaucracy themselves and know how confusing it can be. Our goal is for you to understand every step and get everything done with confidence.",
+    "a.forWho": "Who it's for",
     "faq.eyebrow": "FAQ", "faq.title": "Frequently asked questions",
-    "cta.title": "Ready to get it sorted?", "cta.text": "Book in a few clicks. We reply quickly.",
-    "foot.tag": "Translations and support for Brazilians all across Belgium.", "foot.contact": "Contact",
-    "foot.s1": "Translations", "foot.s2": "Interpreting", "foot.s3": "Accompaniment", "foot.s4": "Administrative support", "foot.country": "Belgium",
+    "cta.title": "Got a letter, a deadline or an appointment coming up?", "cta.text": "Get in touch before the day: there's time to prepare everything calmly.",
+    "foot.tag": "Belgian bureaucracy, explained in Portuguese.", "foot.site": "Site", "foot.contact": "Contact", "foot.country": "Belgium",
     "m.eyebrow": "Booking",
-    "m.pres": "In person", "m.presSub": "In any city in Belgium",
     "m.fullname": "Full name", "m.need": "Briefly tell us what you need", "m.confirm": "Confirm booking",
     "m.success": "Booking request sent!", "m.successText": "We'll confirm your time slot on WhatsApp shortly.",
     "m.close": "Close", "m.back": "Back"
   },
   steps: ["", "Step 1 of 3 — Service", "", "Step 2 of 3 — Date and time", "Step 3 of 3 — Your details", ""],
   titles: ["", "Choose the service", "", "Choose date and time", "Confirm your details", ""],
-  sum: { service: "Service", mode: "Format", date: "Date", time: "Time" },
+  sum: { service: "Service", date: "Date", time: "Time" },
   wa: {
     hello: "Hi! I found Mancini Expat's website and would like more information.",
     quote: "Hi! I'd like a quote for a translation.", book: "Hi! I'd like to confirm a booking.",
     name: "Name", phone: "WhatsApp", email: "Email", doc: "Document", lang: "Language", urg: "Turnaround", files: "Files", notes: "Notes",
     sendFiles: "(I'll send the files right after.)"
   },
-  services: [
-    { id: "traducao", title: "Translations", dur: "On quote", desc: "Translation of personal and official documents between Portuguese, French, Dutch and English.", items: ["Certificates and diplomas", "Sworn translation", "Legalisation and apostille"] },
-    { id: "interprete", title: "Interpreting", dur: "1h – 3h", desc: "An interpreter by your side at medical appointments, meetings, the notary and interviews.", items: ["Doctor and hospital", "Lawyer and notary", "School and work"] },
-    { id: "acompanhamento", title: "Accompaniment to offices", dur: "In person", desc: "We go with you to the commune, the CPAS/OCMW, the Immigration Office and wherever needed — anywhere in Belgium.", items: ["Registering at the commune", "Residence card", "Renewals"] },
-    { id: "consulta", title: "Orientation session", dur: "30 min", desc: "Not sure where to start? A conversation to understand your situation and build a plan.", items: ["Online or in person", "Clear action plan", "Quote on the spot"] }
+  situations: [
+    { id: "carta", svc: "consulta", text: "I got a letter from the commune and I don't understand it.", advice: "Bring the letter to an orientation session: we explain what it asks for, the deadline and what to do next." },
+    { id: "medico", svc: "interprete", text: "I'm seeing a doctor and don't speak French or Dutch.", advice: "An interpreter goes with you to the appointment. Book ahead and write down your questions and the medication you take." },
+    { id: "traduzir", svc: "traducao", text: "I've been asked for translated documents.", advice: "Send a photo of the document and tell us which office asked for the translation, so we can check whether it must be sworn." },
+    { id: "orgao", svc: "acompanhamento", text: "I have an appointment at the commune or the Immigration Office.", advice: "We go together. Beforehand, we check the summons and the list of documents so you don't have to go back." },
+    { id: "chegou", svc: "consulta", text: "I've just arrived and don't know where to start.", advice: "In the orientation session we plan the order of your steps with you: commune, bank, health fund and documents. See also the guides below." },
+    { id: "reuniao", svc: "interprete", text: "I have a meeting at school, with a lawyer or at work.", advice: "An interpreter joins the meeting with you, so no detail gets lost." }
   ],
-  help: {
-    traducao: "Send your document for a quote or book a quick call.",
-    admin: "We sort out the paperwork with you, step by step.",
-    interprete: "A trusted interpreter by your side.",
-    acompanhamento: "We go with you and handle the communication.",
-    consulta: "A 30-minute conversation to understand everything and build your plan."
-  },
+  services: [
+    { id: "traducao", title: "Translations", dur: "On quote", desc: "For documents the commune, school, university or employer require in the local language.", items: ["Certificates, diplomas, transcripts, licences and contracts", "Standard or sworn translation", "Legalisation and apostille"] },
+    { id: "interprete", title: "Interpreting", dur: "1h – 3h", desc: "For when you need to understand and be understood in an important conversation.", items: ["Medical appointments and hospital", "Lawyer and notary", "Meetings at school and at work"] },
+    { id: "acompanhamento", title: "Accompaniment to offices", dur: "In person", desc: "To visit a public office with someone who knows the way and talks to the staff for you.", items: ["Registering at the commune", "Residence card and renewals", "CPAS/OCMW and Immigration Office"] },
+    { id: "consulta", title: "Orientation session", dur: "30 min", desc: "To understand your situation before deciding what to do, or which service you need.", items: ["Review of the letter or document you received", "Action plan with the next steps", "Quote on the spot if you need a service"] }
+  ],
+  how: [
+    ["Tell us what you need", "Book a time or send your document through the website. The message reaches our WhatsApp already filled in, so you don't have to explain everything again."],
+    ["Get price and turnaround", "We reply on WhatsApp with the price and turnaround. You only pay after approving the quote, by bank transfer or Bancontact."],
+    ["Get the result", "Translations are ready within the turnaround you chose in your request: standard, fast or urgent. Appointments: we confirm date, time and place on WhatsApp and meet you there."]
+  ],
+  quoteTips: [
+    "Photograph the document from above, in good light and fully visible.",
+    "Send every page, including the back if it has stamps or an apostille.",
+    "We accept PDFs and photos (JPG, PNG).",
+    "Need a sworn translation? Mention it in the notes."
+  ],
   guides: [
-    ["First days", "Registering at the commune: step by step", "What to bring, the neighbourhood officer's visit and deadlines."],
-    ["Documents", "Which documents to translate before you come", "Certificates, Hague apostille and what Belgium asks for."],
-    ["Language", "French or Dutch? Understanding the regions", "Brussels, Wallonia and Flanders: which language where."],
-    ["Everyday life", "Bank account, health fund and insurance", "Getting organised in your first weeks."],
-    ["Driving", "Brazilian driving licence in Belgium", "How long it's valid and how to exchange it."],
-    ["Family", "Family reunification", "Documents, translations and what to watch out for."]
+    { tag: "First days", title: "Registering at the commune", tips: [
+      "If you're staying more than 3 months, you have 8 working days after arrival to report to the commune where you live.",
+      "Bring your passport with visa, rental contract, recent ID photos and the documents for your visa type (employment contract, enrolment, etc.).",
+      "After you apply, a neighbourhood police officer (agent de quartier / wijkagent) visits to confirm you live at the address. Put your name on the letterbox.",
+      "Keep every document the commune gives you: it proves your application is in progress until your residence card is ready."
+    ] },
+    { tag: "Documents", title: "What to arrange while still in Brazil", tips: [
+      "Full-content (inteiro teor) birth and marriage certificates, recently issued.",
+      "Hague apostille, done at a cartório in Brazil: without it, a Brazilian document isn't valid in Belgium.",
+      "Diplomas and transcripts, if you plan to study or work in your field.",
+      "Criminal record certificate, when your visa type requires it.",
+      "Before translating, ask the office whether the translation must be sworn in Belgium."
+    ] },
+    { tag: "Language", title: "French or Dutch?", tips: [
+      "Flanders (north): Dutch. Wallonia (south): French. Brussels: both. There's also a small German-speaking region in the east.",
+      "Your commune's language is the language of its letters, forms and front desk.",
+      "In Brussels, you choose whether to be served in French or in Dutch.",
+      "Moving to Flanders? Start with our <a href=\"curso.html\">free Dutch lesson</a> (in Portuguese)."
+    ] },
+    { tag: "Everyday life", title: "Health, banking and emergencies", tips: [
+      "Join a health fund (mutualité / ziekenfonds) right after registering: it reimburses doctor visits and medication.",
+      "Choose a GP (médecin généraliste / huisarts). Your GP refers you to specialists.",
+      "Emergencies: 112. On-call GP outside office hours: 1733.",
+      "To open an account, banks usually ask for ID and proof of address in Belgium.",
+      "Bancontact is the most widely accepted payment method in the country."
+    ] },
+    { tag: "Driving", title: "Brazilian driving licence in Belgium", tips: [
+      "You apply to exchange it for a Belgian licence at the commune where you're registered.",
+      "Bring the original licence, ID and a photo.",
+      "Don't leave it to the last minute: driving on a licence that's no longer valid can cause problems with your insurance."
+    ] },
+    { tag: "Family", title: "Family reunification", tips: [
+      "The application is usually made at the Belgian embassy or consulate in Brazil; in some cases at the commune, if the family member is already legally in Belgium.",
+      "Birth, marriage or partnership certificates, apostilled and translated, prove the family link.",
+      "The person bringing their family over usually has to show stable and sufficient income, suitable housing and health insurance.",
+      "The rules depend on the nationality of the person bringing the family (Belgian, EU or non-EU). Check your case on the Immigration Office website: dofi.ibz.be."
+    ] }
+  ],
+  forWho: [
+    ["Newcomers", "Registration, documents and first steps in the country."],
+    ["Families", "Family reunification, school and children's health."],
+    ["Students and workers", "Diplomas, contracts and residence card renewal."],
+    ["Long-term residents", "A letter, an appointment or a one-off procedure."]
   ],
   faq: [
-    ["Do you offer sworn (official) translations?", "Yes, we work with sworn translators recognised in Belgium for documents that need official validity. Just mention it in your quote request."],
-    ["How long does a translation take?", "Usually 5 to 7 working days. Fast and urgent options are available depending on the document."],
-    ["Can the appointment be online?", "Yes. Consultations and advice can be done by video call. Accompaniment to offices is in person."],
-    ["Which cities do you cover in person?", "Every city in Belgium — Brussels, Antwerp, Ghent, Liège, Charleroi, Namur, Leuven, Bruges and wherever you are. Consultations can also be done online."],
-    ["How does payment work?", "Once the quote is approved, we send you the payment instructions. We accept bank transfer and Bancontact."]
+    ["What's the difference between a standard and a sworn translation?", "A sworn translation is done by a sworn translator recognised in Belgium and has official validity: it's what communes, courts and universities usually require. A standard translation is for understanding a document or for unofficial use. If in doubt, ask the office or ask us."],
+    ["Which days do you work?", "Monday to Friday, mornings and afternoons. Available slots appear when you book."]
   ]
 }
 };
