@@ -22,9 +22,10 @@ function setLang(l){
   $$("[data-i18n]").forEach(el => { const v = L.t[el.dataset.i18n]; if (v != null) el.innerHTML = v; });
   $$("[data-lang]").forEach(a => a.classList.toggle("on", a.dataset.lang === l));
   $$("#waFloat,#ctaWa,#footWa").forEach(a => a.href = waLink(L.wa.hello));
-  renderHelper(); renderServices(); renderHow(); renderTips(); renderGuides(); renderForWho(); renderFaq(); renderPick();
+  renderHelper(); renderServices(); renderHow(); renderTips(); renderGuides(); renderForWho(); renderPartners(); renderFaq(); renderPick();
   if (activeHelp) showHelp(activeHelp);
   if ($("#modal").classList.contains("open")) go(step);
+  Consent.setLang(l);
 }
 
 /* ===== Seções dinâmicas ===== */
@@ -62,6 +63,14 @@ function renderGuides(){
 }
 function renderForWho(){
   $("#forWho").innerHTML = L.forWho.map(([t, p]) => `<div><b>${t}</b><span>${p}</span></div>`).join("");
+}
+function renderPartners(){
+  $("#partnersList").innerHTML = CONFIG.partners.map(p => { const x = L.partners[p.id]; return `
+    <article class="partner">
+      <div class="partner-logo${p.logo ? " has-img" : ""}">${p.logo ? `<img src="${p.logo}" alt="${p.name}" loading="lazy">` : `<span>${p.name}</span>`}</div>
+      <div class="partner-body"><h3>${x.title}</h3><p>${x.text}</p></div>
+      <a class="btn btn-ghost" href="${p.url}" target="_blank" rel="noopener">${x.cta} ↗</a>
+    </article>`; }).join("");
 }
 function renderFaq(){
   $("#faqList").innerHTML = L.faq.map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join("");
@@ -105,7 +114,7 @@ $("#quoteForm").onsubmit = e => {
 
 /* ===== Agendamento ===== */
 const booking = {};
-let step = 1, days = [];
+let step = 1;
 
 function go(n){
   step = n;
@@ -115,31 +124,92 @@ function go(n){
   $("#modalTitle").textContent = L.titles[n];
   $("#modalTitle").parentElement.style.display = n === 5 ? "none" : "";
   $("#modalFoot").style.display = (n === 1 || n === 5) ? "none" : "flex";
-  if (n === 3) renderDays();
+  if (n === 3) renderCal();
   if (n === 4) $("#summary").innerHTML = summaryHTML();
   if (n === 5) $("#summaryFinal").innerHTML = summaryHTML();
 }
 $("#backBtn").onclick = () => go(step === 3 ? 1 : step - 1);
 
-function renderDays(){
-  days = []; const d = new Date(); d.setHours(0, 0, 0, 0);
-  while (days.length < CONFIG.daysAhead) { d.setDate(d.getDate() + 1); if (CONFIG.workDays.includes(d.getDay())) days.push(new Date(d)); }
-  const loc = L.meta.locale;
-  $("#days").innerHTML = days.map((x, i) => `<button class="day" data-i="${i}"><small>${x.toLocaleDateString(loc, { weekday: "short" }).replace(".", "")}</small><b>${x.getDate()}</b><small>${x.toLocaleDateString(loc, { month: "short" }).replace(".", "")}</small></button>`).join("");
-  $$("#days .day").forEach(b => b.onclick = () => {
-    $$("#days .day").forEach(x => x.classList.remove("active")); b.classList.add("active");
-    booking.date = days[+b.dataset.i]; renderSlots();
-  });
-  const i = booking.date ? Math.max(0, days.findIndex(x => +x === +booking.date)) : 0;
-  $$("#days .day")[i].click();
+/* Datas e horas são sempre as de Bruxelas, guardadas como texto ("2026-10-07" e "09:30"),
+   para o calendário não mudar conforme o fuso de quem visita o site. */
+const TZ = "Europe/Brussels";
+const pad = n => String(n).padStart(2, "0");
+const keyOf = d => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
+const dateOf = key => new Date(key + "T00:00:00Z");
+const addDays = (key, n) => { const d = dateOf(key); d.setUTCDate(d.getUTCDate() + n); return keyOf(d); };
+const shiftMonth = (ym, n) => { const [y, m] = ym.split("-").map(Number); return keyOf(new Date(Date.UTC(y, m - 1 + n, 1))).slice(0, 7); };
+function todayKey(){
+  const p = {};
+  new Intl.DateTimeFormat("en", { timeZone: TZ, year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return `${p.year}-${p.month}-${p.day}`;
+}
+const fmt = (key, opts) => dateOf(key).toLocaleDateString(L.meta.locale, { ...opts, timeZone: "UTC" });
+const fmtDate = key => fmt(key, { weekday: "long", day: "numeric", month: "long" });
+
+/* Horários ocupados: vêm da Google Agenda do cliente (google-apps-script/disponibilidade.gs), só início e fim.
+   Sem URL ou com erro, tudo aparece como disponível: o agendamento nunca trava por causa disso.
+   O script do Google às vezes demora: a tela espera só CONFIG.availabilityWait; depois mostra tudo livre
+   e, quando a resposta chega, o calendário é corrigido (refreshBooking). */
+let busy = [], busyAt = 0, busyLoading = false, busyWait = false, slotTaken = false;
+async function loadBusy(){
+  if (!CONFIG.availabilityUrl || busyLoading || Date.now() - busyAt < 5 * 60000) return;
+  busyLoading = busyWait = true;
+  const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), 45000);
+  const waitTimer = setTimeout(() => { busyWait = false; refreshBooking(); }, CONFIG.availabilityWait);
+  try {
+    const r = await fetch(CONFIG.availabilityUrl, { signal: ctl.signal, credentials: "omit" });
+    const list = (await r.json()).busy;
+    if (!Array.isArray(list)) throw new Error("resposta inesperada");
+    busy = list.filter(b => b && typeof b.start === "string" && typeof b.end === "string");
+    busyAt = Date.now();
+  } catch { busy = []; }
+  clearTimeout(timer); clearTimeout(waitTimer); busyLoading = busyWait = false;
+  refreshBooking();
+}
+// Atualiza o que estiver na tela; se a pessoa já escolheu um horário que na verdade está ocupado, volta para a escolha
+function refreshBooking(){
+  if (!$("#modal").classList.contains("open")) return;
+  if (step === 3) renderCal();
+  else if (step === 4 && isBusy(booking.date, booking.time)) { slotTaken = true; go(3); }
+}
+const slotEnd = h => { const [H, M] = h.split(":").map(Number), m = H * 60 + M + CONFIG.slotMinutes; return pad(Math.floor(m / 60)) + ":" + pad(m % 60); };
+const isBusy = (key, h) => busy.some(b => b.start < `${key}T${slotEnd(h)}` && b.end > `${key}T${h}`);
+
+let range, view;   // range: primeira e última data agendável · view: mês visível ("2026-10")
+// Dia agendável: dentro do limite, dia útil e com pelo menos um horário livre (evento de dia inteiro ocupa todos)
+const isOpen = key => key >= range.min && key <= range.max && CONFIG.workDays.includes(dateOf(key).getUTCDay()) && CONFIG.hours.some(h => !isBusy(key, h));
+
+function renderCal(){
+  const today = todayKey();
+  range = { min: addDays(today, 1), max: addDays(today, CONFIG.daysAhead) };
+  if (!busyWait && !(booking.date && isOpen(booking.date))) {
+    booking.date = null; view = null;
+    for (let k = range.min; k <= range.max; k = addDays(k, 1)) if (isOpen(k)) { booking.date = k; break; }
+  }
+  if (!view) view = (booking.date || range.min).slice(0, 7);
+  const [y, m] = view.split("-").map(Number);
+  const lead = (new Date(Date.UTC(y, m - 1, 1)).getUTCDay() + 6) % 7;   // a semana começa na segunda
+  const total = new Date(Date.UTC(y, m, 0)).getUTCDate();
+  const week = [1, 2, 3, 4, 5, 6, 7].map(d => fmt("2024-01-0" + d, { weekday: "short" }).replace(".", ""));   // 01/01/2024 foi segunda
+  const cells = Array.from({ length: total }, (_, i) => { const key = `${view}-${pad(i + 1)}`;
+    return `<button class="cal-day${key === booking.date ? " active" : ""}" data-key="${key}" aria-label="${fmt(key, { day: "numeric", month: "long" })}" ${!busyWait && isOpen(key) ? "" : "disabled"}>${i + 1}</button>`; }).join("");
+  $("#cal").innerHTML = `
+    <div class="cal-head">
+      <button class="cal-nav" data-nav="-1" aria-label="${L.t["cal.prev"]}" ${view <= range.min.slice(0, 7) ? "disabled" : ""}>‹</button>
+      <b class="cal-title">${fmt(view + "-01", { month: "long", year: "numeric" })}</b>
+      <button class="cal-nav" data-nav="1" aria-label="${L.t["cal.next"]}" ${view >= range.max.slice(0, 7) ? "disabled" : ""}>›</button>
+    </div>
+    <div class="cal-grid">${week.map(w => `<span class="cal-wd">${w}</span>`).join("")}${"<span></span>".repeat(lead)}${cells}</div>`;
+  $$("#cal .cal-nav").forEach(b => b.onclick = () => { view = shiftMonth(view, +b.dataset.nav); renderCal(); });
+  $$("#cal .cal-day").forEach(b => b.onclick = () => { booking.date = b.dataset.key; slotTaken = false; renderCal(); });
+  renderSlots();
 }
 function renderSlots(){
-  // TODO: substituir por disponibilidade real (Google Calendar / Cal.com)
-  const seed = booking.date.getDate();
-  $("#slots").innerHTML = CONFIG.hours.map((h, i) => `<button class="slot" ${((i * 7 + seed) % 5 === 0) ? "disabled" : ""}>${h}</button>`).join("");
-  $$("#slots .slot").forEach(b => b.onclick = () => { booking.time = b.textContent; go(4); });
+  $("#slotsHead").textContent = !busyWait && booking.date ? fmtDate(booking.date) : "";
+  if (busyWait || !booking.date) { $("#slots").innerHTML = `<p class="cal-msg${busyWait ? " loading" : ""}">${L.t[busyWait ? "cal.loading" : "cal.none"]}</p>`; return; }
+  $("#slots").innerHTML = (slotTaken ? `<p class="cal-msg taken">${L.t["cal.taken"]}</p>` : "") + CONFIG.hours.map(h => `<button class="slot" ${isBusy(booking.date, h) ? "disabled" : ""}>${h}</button>`).join("");
+  $$("#slots .slot").forEach(b => b.onclick = () => { booking.time = b.textContent; slotTaken = false; go(4); });
 }
-const fmtDate = d => d.toLocaleDateString(L.meta.locale, { weekday: "long", day: "numeric", month: "long" });
 function summaryHTML(){
   const s = L.sum;
   return `<div><span>${s.service}</span><b>${svc(booking.service).title}</b></div>
@@ -154,7 +224,8 @@ $("#bookForm").onsubmit = e => {
 };
 
 function openBooking(svcId){
-  $("#bookForm").reset(); booking.date = null;
+  $("#bookForm").reset(); booking.date = booking.time = null; view = null; slotTaken = false;
+  loadBusy();
   $("#modal").classList.add("open"); document.body.style.overflow = "hidden";
   if (svcId) { booking.service = svcId; go(3); } else go(1);
 }

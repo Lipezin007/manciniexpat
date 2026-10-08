@@ -61,7 +61,7 @@ AULAS.push({
       { nl: "Dag!", pron: "dárr", pt: "Oi! / Tchau!", note: "A palavra mais útil da Flandres: serve para chegar e para sair." },
       { nl: "Goeiedag!", pron: "RRÚ-iê-dárr", pt: "Bom dia! / Olá!", note: "Um pouco mais formal que “Dag!”. Vale a qualquer hora do dia." },
       { nl: "Hoe gaat het?", pron: "hu RRÁT ât", pt: "Como vai?", note: "Entre amigos você também vai ouvir “Hoe is 't?”." },
-      { nl: "Goed, merci! En met u?", pron: "rrut, mér-SÍ! en mét ü?", pt: "Bem, obrigado(a)! E você?", note: "“Merci” é usado no dia a dia na Flandres." },
+      { nl: "Goed, dank u! En met u?", pron: "rrut, DANK ü! en mét ü?", pt: "Bem, obrigado(a)! E você?", note: "Na Flandres você também vai ouvir “merci” no lugar de “dank u”." },
       { nl: "Ik heet …", say: "Ik heet Ana.", pron: "ik HÊT …", pt: "Eu me chamo …", note: "Complete com o seu nome: “Ik heet Ana.”" },
       { nl: "Ik kom uit Brazilië.", pron: "ik kom âit bra-ZÍ-li-â", pt: "Eu sou do Brasil." },
       { nl: "Ik spreek een beetje Nederlands.", pron: "ik SPRÊK ân BÊ-tchâ NÊ-dâr-lants", pt: "Eu falo um pouco de holandês." },

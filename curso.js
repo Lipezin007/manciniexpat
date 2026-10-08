@@ -60,11 +60,18 @@ function renderHeader(){
   $("#lessonSub").textContent = aula.subtitle;
   renderMeta();
   $("#lessonIntro").innerHTML = `<span class="ico">💡</span><p>${aula.intro}</p>`;
-  if (aula.video) {
-    $("#videoFrame").src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(aula.video)}`;
-    $("#videoBlock").hidden = false;
-  }
+  renderVideo();
   renderTabs();
+}
+// Vídeo do YouTube: o iframe só entra na página depois de a pessoa aceitar os cookies de mídia
+function renderVideo(){
+  if (!aula.video) return;
+  const ok = Consent.has("media"), t = I18N.pt.consent;
+  $("#videoBlock").hidden = false;
+  $("#videoBlock").innerHTML = ok
+    ? `<div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(aula.video)}" title="Vídeo da aula" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>`
+    : `<div class="video-consent"><span class="ico">🎬</span><p>${t.video}</p><button class="btn btn-ghost" id="videoAccept">${t.videoBtn}</button></div>`;
+  if (!ok) $("#videoAccept").onclick = () => Consent.grant("media");
 }
 // Abas só aparecem quando existir mais de uma aula
 function renderTabs(){
@@ -157,4 +164,6 @@ $("#slowBtn").onclick = () => {
 
 if (aula) {
   renderHeader(); renderPronunciation(); renderPhrases(); renderQuiz(); initVoice();
+  Consent.onChange(renderVideo);
 }
+Consent.setLang("pt");   // a aula é só em português

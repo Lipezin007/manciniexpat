@@ -36,7 +36,13 @@ pt: {
     "a.forWho": "Para quem é",
     "faq.eyebrow": "Dúvidas frequentes", "faq.title": "Perguntas frequentes",
     "cta.title": "Tem uma carta, um prazo ou uma consulta marcada?", "cta.text": "Fale com a gente antes do dia: dá tempo de preparar tudo com calma.",
-    "foot.tag": "A burocracia belga, explicada em português.", "foot.site": "Site", "foot.contact": "Contato", "foot.country": "Bélgica",
+    "foot.tag": "A burocracia belga, explicada em português.", "foot.site": "Site", "foot.contact": "Contato", "foot.country": "Bélgica", "foot.dev": "Desenvolvido por",
+    "foot.legalTitle": "Legal", "foot.privacy": "Política de Privacidade", "foot.cookies": "Política de Cookies", "foot.legal": "Aviso legal", "foot.prefs": "Preferências de cookies",
+    "legal.updated": "Última atualização", "legal.back": "Voltar ao site",
+    "f.privacy": "Ao enviar, você confirma que leu a nossa <a href=\"legal.html?doc=privacy\" target=\"_blank\">Política de Privacidade</a>.",
+    "cal.note": "Horários no fuso de Bruxelas. A confirmação final é feita pelo WhatsApp.", "cal.loading": "Verificando horários disponíveis…",
+    "cal.none": "Sem horários livres. Escolha outra data ou fale com a gente pelo WhatsApp.", "cal.taken": "Esse horário não está mais disponível. Escolha outro.", "cal.prev": "Mês anterior", "cal.next": "Próximo mês", "foot.partners": "Parceiros",
+    "p.eyebrow": "Parceiros", "p.title": "Nossos parceiros",
     "m.eyebrow": "Agendamento",
     "m.fullname": "Nome completo", "m.need": "Conte brevemente o que precisa", "m.confirm": "Confirmar agendamento",
     "m.success": "Pedido de agendamento enviado!", "m.successText": "Vamos confirmar seu horário pelo WhatsApp em breve.",
@@ -50,6 +56,25 @@ pt: {
     quote: "Olá! Gostaria de um orçamento de tradução.", book: "Olá! Gostaria de confirmar um agendamento.",
     name: "Nome", phone: "WhatsApp", email: "E-mail", doc: "Documento", lang: "Idioma", urg: "Urgência", files: "Arquivos", notes: "Obs.",
     sendFiles: "(Vou enviar os arquivos em seguida.)"
+  },
+  // Banner e preferências de cookies (consent.js). Categorias ativas: CONFIG.consent.categories
+  consent: {
+    title: "Cookies e privacidade",
+    text: "Guardamos no seu navegador só o necessário para o site funcionar: idioma, progresso da aula e esta escolha. Com a sua permissão, também carregamos vídeos do YouTube, que pode gravar cookies.",
+    more: "Política de Cookies", accept: "Aceitar todos", reject: "Recusar", customize: "Personalizar", save: "Salvar escolhas",
+    prefsTitle: "Preferências de cookies", always: "Sempre ativos",
+    prefsText: "Escolha o que você permite. Dá para mudar de ideia a qualquer momento pelo link “Preferências de cookies” no rodapé.",
+    cats: {
+      necessary: ["Necessários","Guardam o idioma escolhido, o seu progresso na aula de holandês e a sua escolha de cookies. Ficam só no seu navegador."],
+      media: ["Mídia e vídeos","Permite carregar vídeos do YouTube nas aulas. O YouTube (Google) pode gravar cookies e receber o seu endereço IP."],
+      stats: ["Estatísticas","Medem como o site é usado, para melhorarmos o conteúdo."]
+    },
+    video: "Para ver o vídeo, aceite os cookies de mídia. O vídeo é carregado do YouTube, que pode gravar cookies.",
+    videoBtn: "Aceitar cookies de mídia e ver o vídeo"
+  },
+  // Textos dos parceiros (nome, url e logo ficam em CONFIG.partners, em config.js)
+  partners: {
+    a2tripgo: { title: "Parceiro de viagens: A2 TripGo", text: "Vai visitar a família no Brasil ou quer conhecer a Europa? A A2 TripGo é a nossa parceira em viagens: consultoria personalizada, passagens aéreas e roteiros sob medida, com atendimento em português e cotação gratuita em até 24h.", cta: "Conhecer a A2 TripGo" }
   },
   situations: [
     { id: "carta", svc: "consulta", text: "Recebi uma carta da commune e não entendi.", advice: "Traga a carta para uma consulta de orientação: explicamos o que ela pede, qual é o prazo e o que fazer em seguida." },
@@ -162,7 +187,13 @@ fr: {
     "a.forWho": "Pour qui",
     "faq.eyebrow": "Questions fréquentes", "faq.title": "Questions fréquentes",
     "cta.title": "Un courrier, un délai ou un rendez-vous à venir ?", "cta.text": "Contactez-nous avant le jour J : nous aurons le temps de tout préparer.",
-    "foot.tag": "L'administration belge, expliquée en portugais.", "foot.site": "Site", "foot.contact": "Contact", "foot.country": "Belgique",
+    "foot.tag": "L'administration belge, expliquée en portugais.", "foot.site": "Site", "foot.contact": "Contact", "foot.country": "Belgique", "foot.dev": "Développé par",
+    "foot.legalTitle": "Légal", "foot.privacy": "Politique de confidentialité", "foot.cookies": "Politique de cookies", "foot.legal": "Mentions légales", "foot.prefs": "Préférences de cookies",
+    "legal.updated": "Dernière mise à jour", "legal.back": "Retour au site",
+    "f.privacy": "En envoyant, vous confirmez avoir lu notre <a href=\"legal.html?doc=privacy\" target=\"_blank\">Politique de confidentialité</a>.",
+    "cal.note": "Heures indiquées à l'heure de Bruxelles. La confirmation finale se fait par WhatsApp.", "cal.loading": "Vérification des créneaux disponibles…",
+    "cal.none": "Aucun créneau libre. Choisissez une autre date ou contactez-nous par WhatsApp.", "cal.taken": "Ce créneau n'est plus disponible. Choisissez-en un autre.", "cal.prev": "Mois précédent", "cal.next": "Mois suivant", "foot.partners": "Partenaires",
+    "p.eyebrow": "Partenaires", "p.title": "Nos partenaires",
     "m.eyebrow": "Rendez-vous",
     "m.fullname": "Nom complet", "m.need": "Décrivez brièvement votre besoin", "m.confirm": "Confirmer le rendez-vous",
     "m.success": "Demande de rendez-vous envoyée !", "m.successText": "Nous vous confirmerons l'horaire par WhatsApp très bientôt.",
@@ -176,6 +207,25 @@ fr: {
     quote: "Bonjour ! Je souhaite un devis de traduction.", book: "Bonjour ! Je souhaite confirmer un rendez-vous.",
     name: "Nom", phone: "WhatsApp", email: "E-mail", doc: "Document", lang: "Langue", urg: "Délai", files: "Fichiers", notes: "Remarques",
     sendFiles: "(J'envoie les fichiers juste après.)"
+  },
+  // Banner e preferências de cookies (consent.js). Categorias ativas: CONFIG.consent.categories
+  consent: {
+    title: "Cookies et vie privée",
+    text: "Nous n'enregistrons dans votre navigateur que le nécessaire au fonctionnement du site : langue, progression du cours et ce choix. Avec votre accord, nous chargeons aussi des vidéos YouTube, qui peut déposer des cookies.",
+    more: "Politique de cookies", accept: "Tout accepter", reject: "Refuser", customize: "Personnaliser", save: "Enregistrer mes choix",
+    prefsTitle: "Préférences de cookies", always: "Toujours actifs",
+    prefsText: "Choisissez ce que vous autorisez. Vous pouvez changer d'avis à tout moment via le lien « Préférences de cookies » en bas de page.",
+    cats: {
+      necessary: ["Nécessaires","Ils retiennent la langue choisie, votre progression dans le cours de néerlandais et votre choix de cookies. Ils restent dans votre navigateur."],
+      media: ["Médias et vidéos","Permet de charger des vidéos YouTube dans les cours. YouTube (Google) peut déposer des cookies et recevoir votre adresse IP."],
+      stats: ["Statistiques","Ils mesurent l'utilisation du site afin d'améliorer son contenu."]
+    },
+    video: "Pour voir la vidéo, acceptez les cookies médias. La vidéo est chargée depuis YouTube, qui peut déposer des cookies.",
+    videoBtn: "Accepter les cookies médias et voir la vidéo"
+  },
+  // Textos dos parceiros (nome, url e logo ficam em CONFIG.partners, em config.js)
+  partners: {
+    a2tripgo: { title: "Partenaire voyages : A2 TripGo", text: "Vous rendez visite à votre famille au Brésil ou vous voulez découvrir l'Europe ? A2 TripGo est notre partenaire voyages : conseil personnalisé, billets d'avion et itinéraires sur mesure, avec un service en portugais et un devis gratuit sous 24 h.", cta: "Découvrir A2 TripGo" }
   },
   situations: [
     { id: "carta", svc: "consulta", text: "J'ai reçu un courrier de la commune et je ne le comprends pas.", advice: "Apportez le courrier à une consultation d'orientation : nous vous expliquons ce qu'il demande, le délai et la marche à suivre." },
@@ -288,7 +338,13 @@ nl: {
     "a.forWho": "Voor wie",
     "faq.eyebrow": "Veelgestelde vragen", "faq.title": "Veelgestelde vragen",
     "cta.title": "Een brief, een termijn of een afspraak op komst?", "cta.text": "Neem vóór de dag zelf contact op: dan hebben we tijd om alles rustig voor te bereiden.",
-    "foot.tag": "De Belgische administratie, uitgelegd in het Portugees.", "foot.site": "Website", "foot.contact": "Contact", "foot.country": "België",
+    "foot.tag": "De Belgische administratie, uitgelegd in het Portugees.", "foot.site": "Website", "foot.contact": "Contact", "foot.country": "België", "foot.dev": "Ontwikkeld door",
+    "foot.legalTitle": "Juridisch", "foot.privacy": "Privacybeleid", "foot.cookies": "Cookiebeleid", "foot.legal": "Wettelijke vermeldingen", "foot.prefs": "Cookievoorkeuren",
+    "legal.updated": "Laatst bijgewerkt", "legal.back": "Terug naar de website",
+    "f.privacy": "Door te verzenden bevestigt u dat u ons <a href=\"legal.html?doc=privacy\" target=\"_blank\">Privacybeleid</a> heeft gelezen.",
+    "cal.note": "Tijdstippen in Brusselse tijd. De definitieve bevestiging gebeurt via WhatsApp.", "cal.loading": "Beschikbare tijdstippen worden gecontroleerd…",
+    "cal.none": "Geen vrije tijdstippen. Kies een andere datum of contacteer ons via WhatsApp.", "cal.taken": "Dit tijdstip is niet meer beschikbaar. Kies een ander.", "cal.prev": "Vorige maand", "cal.next": "Volgende maand", "foot.partners": "Partners",
+    "p.eyebrow": "Partners", "p.title": "Onze partners",
     "m.eyebrow": "Afspraak",
     "m.fullname": "Volledige naam", "m.need": "Beschrijf kort wat u nodig heeft", "m.confirm": "Afspraak bevestigen",
     "m.success": "Afspraakaanvraag verstuurd!", "m.successText": "We bevestigen uw tijdstip binnenkort via WhatsApp.",
@@ -302,6 +358,25 @@ nl: {
     quote: "Hallo! Ik wil graag een offerte voor een vertaling.", book: "Hallo! Ik wil graag een afspraak bevestigen.",
     name: "Naam", phone: "WhatsApp", email: "E-mail", doc: "Document", lang: "Taal", urg: "Termijn", files: "Bestanden", notes: "Opmerkingen",
     sendFiles: "(Ik stuur de bestanden meteen door.)"
+  },
+  // Banner e preferências de cookies (consent.js). Categorias ativas: CONFIG.consent.categories
+  consent: {
+    title: "Cookies en privacy",
+    text: "We bewaren in uw browser alleen wat nodig is om de website te laten werken: taal, voortgang van de les en deze keuze. Met uw toestemming laden we ook YouTube-video's; YouTube kan cookies plaatsen.",
+    more: "Cookiebeleid", accept: "Alles aanvaarden", reject: "Weigeren", customize: "Aanpassen", save: "Keuzes opslaan",
+    prefsTitle: "Cookievoorkeuren", always: "Altijd actief",
+    prefsText: "Kies wat u toelaat. U kunt op elk moment van gedachte veranderen via de link “Cookievoorkeuren” onderaan de pagina.",
+    cats: {
+      necessary: ["Noodzakelijk","Ze onthouden de gekozen taal, uw voortgang in de les Nederlands en uw cookiekeuze. Ze blijven in uw browser."],
+      media: ["Media en video's","Laat toe om YouTube-video's in de lessen te laden. YouTube (Google) kan cookies plaatsen en uw IP-adres ontvangen."],
+      stats: ["Statistieken","Ze meten hoe de website wordt gebruikt, zodat we de inhoud kunnen verbeteren."]
+    },
+    video: "Aanvaard de mediacookies om de video te bekijken. De video wordt geladen vanaf YouTube, dat cookies kan plaatsen.",
+    videoBtn: "Mediacookies aanvaarden en video bekijken"
+  },
+  // Textos dos parceiros (nome, url e logo ficam em CONFIG.partners, em config.js)
+  partners: {
+    a2tripgo: { title: "Reispartner: A2 TripGo", text: "Gaat u uw familie in Brazilië bezoeken of wilt u Europa ontdekken? A2 TripGo is onze reispartner: persoonlijk advies, vliegtickets en reisroutes op maat, met service in het Portugees en een gratis offerte binnen 24 uur.", cta: "Ontdek A2 TripGo" }
   },
   situations: [
     { id: "carta", svc: "consulta", text: "Ik kreeg een brief van de gemeente en begrijp hem niet.", advice: "Breng de brief mee naar een oriënterend gesprek: we leggen uit wat er gevraagd wordt, wat de termijn is en wat u daarna moet doen." },
@@ -414,7 +489,13 @@ en: {
     "a.forWho": "Who it's for",
     "faq.eyebrow": "FAQ", "faq.title": "Frequently asked questions",
     "cta.title": "Got a letter, a deadline or an appointment coming up?", "cta.text": "Get in touch before the day: there's time to prepare everything calmly.",
-    "foot.tag": "Belgian bureaucracy, explained in Portuguese.", "foot.site": "Site", "foot.contact": "Contact", "foot.country": "Belgium",
+    "foot.tag": "Belgian bureaucracy, explained in Portuguese.", "foot.site": "Site", "foot.contact": "Contact", "foot.country": "Belgium", "foot.dev": "Developed by",
+    "foot.legalTitle": "Legal", "foot.privacy": "Privacy Policy", "foot.cookies": "Cookie Policy", "foot.legal": "Legal notice", "foot.prefs": "Cookie preferences",
+    "legal.updated": "Last updated", "legal.back": "Back to the site",
+    "f.privacy": "By submitting, you confirm that you have read our <a href=\"legal.html?doc=privacy\" target=\"_blank\">Privacy Policy</a>.",
+    "cal.note": "Times are shown in Brussels time. Final confirmation is done on WhatsApp.", "cal.loading": "Checking available times…",
+    "cal.none": "No free slots. Choose another date or contact us on WhatsApp.", "cal.taken": "That time is no longer available. Please choose another.", "cal.prev": "Previous month", "cal.next": "Next month", "foot.partners": "Partners",
+    "p.eyebrow": "Partners", "p.title": "Our partners",
     "m.eyebrow": "Booking",
     "m.fullname": "Full name", "m.need": "Briefly tell us what you need", "m.confirm": "Confirm booking",
     "m.success": "Booking request sent!", "m.successText": "We'll confirm your time slot on WhatsApp shortly.",
@@ -428,6 +509,25 @@ en: {
     quote: "Hi! I'd like a quote for a translation.", book: "Hi! I'd like to confirm a booking.",
     name: "Name", phone: "WhatsApp", email: "Email", doc: "Document", lang: "Language", urg: "Turnaround", files: "Files", notes: "Notes",
     sendFiles: "(I'll send the files right after.)"
+  },
+  // Banner e preferências de cookies (consent.js). Categorias ativas: CONFIG.consent.categories
+  consent: {
+    title: "Cookies and privacy",
+    text: "We only store in your browser what the site needs to work: language, lesson progress and this choice. With your permission, we also load YouTube videos, and YouTube may set cookies.",
+    more: "Cookie Policy", accept: "Accept all", reject: "Refuse", customize: "Customise", save: "Save choices",
+    prefsTitle: "Cookie preferences", always: "Always active",
+    prefsText: "Choose what you allow. You can change your mind at any time using the “Cookie preferences” link in the footer.",
+    cats: {
+      necessary: ["Necessary","They remember your chosen language, your progress in the Dutch lesson and your cookie choice. They stay in your browser."],
+      media: ["Media and videos","Allows YouTube videos to load in the lessons. YouTube (Google) may set cookies and receive your IP address."],
+      stats: ["Statistics","They measure how the site is used so we can improve its content."]
+    },
+    video: "To watch the video, accept media cookies. The video is loaded from YouTube, which may set cookies.",
+    videoBtn: "Accept media cookies and watch the video"
+  },
+  // Textos dos parceiros (nome, url e logo ficam em CONFIG.partners, em config.js)
+  partners: {
+    a2tripgo: { title: "Travel partner: A2 TripGo", text: "Visiting family in Brazil or planning to explore Europe? A2 TripGo is our travel partner: personalised advice, flights and tailor-made itineraries, with service in Portuguese and a free quote within 24 hours.", cta: "Visit A2 TripGo" }
   },
   situations: [
     { id: "carta", svc: "consulta", text: "I got a letter from the commune and I don't understand it.", advice: "Bring the letter to an orientation session: we explain what it asks for, the deadline and what to do next." },
