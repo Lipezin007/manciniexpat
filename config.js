@@ -34,6 +34,17 @@ const CONFIG = {
     retentionMonths: 6                // meses de guarda dos dados depois do serviço. 0 = não guarda · null = [PREENCHER]
   },
 
+  // Locais onde já atendemos (mapa da página inicial). name: texto único ou um por idioma; só o nome aparece no site.
+  serviceAreas: [
+    { id: "dendermonde", name: { pt: "Dendermonde", fr: "Termonde", nl: "Dendermonde", en: "Dendermonde" }, lat: 51.0323, lng: 4.0998 },  // Franz Courtensstraat 11, 9200 Dendermonde
+    { id: "gent", name: { pt: "Gante", fr: "Gand", nl: "Gent", en: "Ghent" }, lat: 51.0472, lng: 3.7309 },                               // Woodrow Wilsonplein 1, 9000 Gent
+    { id: "kampenhout", name: "Kampenhout", lat: 50.9414, lng: 4.5508 },                                                                  // Gemeentehuisstraat 32, 1910 Kampenhout
+    { id: "beersel", name: "Alsemberg (Beersel)", lat: 50.7508, lng: 4.3358 },                                                            // Alsembergsteenweg 1046, 1652 Alsemberg
+    { id: "vilvoorde", name: { pt: "Vilvoorde", fr: "Vilvorde", nl: "Vilvoorde", en: "Vilvoorde" }, lat: 50.9279, lng: 4.4229 },          // Lange Molenstraat 44, 1800 Vilvoorde
+    { id: "erpe-mere", name: "Erpe-Mere", lat: 50.9237, lng: 3.9437 },                                                                    // Oudenaardsesteenweg 458, 9420 Erpe-Mere
+    { id: "bruxelas", name: { pt: "Bruxelas", fr: "Bruxelles", nl: "Brussel", en: "Brussels" }, lat: 50.8501, lng: 4.3501 }               // Rue des Halles 4, 1000 Bruxelles
+  ],
+
   // Parceiros: para adicionar outro, copie a linha e crie os textos (title, text, cta) com o mesmo id
   // em "partners", nos 4 idiomas de i18n.js. logo: caminho do arquivo (ex.: "img/a2tripgo.png"); vazio = mostra só o nome.
   partners: [

@@ -22,7 +22,7 @@ function setLang(l){
   $$("[data-i18n]").forEach(el => { const v = L.t[el.dataset.i18n]; if (v != null) el.innerHTML = v; });
   $$("[data-lang]").forEach(a => a.classList.toggle("on", a.dataset.lang === l));
   $$("#waFloat,#ctaWa,#footWa").forEach(a => a.href = waLink(L.wa.hello));
-  renderHelper(); renderServices(); renderHow(); renderTips(); renderGuides(); renderForWho(); renderPartners(); renderFaq(); renderPick();
+  renderHelper(); renderServices(); renderHow(); renderTips(); renderGuides(); renderForWho(); renderAreas(); renderPartners(); renderFaq(); renderPick();
   if (activeHelp) showHelp(activeHelp);
   if ($("#modal").classList.contains("open")) go(step);
   Consent.setLang(l);
@@ -80,6 +80,67 @@ function renderPick(){
     <button class="option" data-svc="${s.id}"><div><b>${ICONS[s.id]} ${s.title}</b><small>${s.desc}</small></div><span class="dur">${s.dur}</span></button>`).join("");
   $$("#pickService .option").forEach(b => b.onclick = () => { booking.service = b.dataset.svc; go(3); });
 }
+
+/* ===== Locais onde já atendemos (mapa) =====
+   Leaflet (vendor/leaflet) e os contornos da Bélgica (map-data.js) ficam no próprio site e só são baixados quando a
+   seção se aproxima da tela. Não há mapa de terceiros: nenhum dado do visitante sai do site, então não precisa de consentimento. */
+const areaName = a => typeof a.name === "object" ? a.name[lang] : a.name;
+const areaMarkers = {};
+let areaMap = null;
+function renderAreas(){
+  $("#areaList").innerHTML = CONFIG.serviceAreas.map(a => `<li><button type="button" data-area="${a.id}">${areaName(a)}</button></li>`).join("");
+  $$("#areaList [data-area]").forEach(b => b.onclick = () => focusArea(b.dataset.area));
+  $("#areasMap").setAttribute("aria-label", L.t["map.aria"]);
+  if (areaMap) $("#mapHint").textContent = L.t[matchMedia("(pointer: coarse)").matches ? "map.hintTouch" : "map.hint"];
+  CONFIG.serviceAreas.forEach(a => { const m = areaMarkers[a.id]; if (m) { m.setTooltipContent(areaName(a)); m.getElement().setAttribute("aria-label", areaName(a)); } });
+}
+function focusArea(id){
+  const m = areaMarkers[id]; if (!m) return;
+  areaMap.flyTo(m.getLatLng(), Math.max(areaMap.getZoom(), 10.5), { duration: .7 });
+  areaMap.once("moveend", () => m.openTooltip());
+}
+// Carrega os arquivos do mapa com a mesma versão (?v=) desta página, para o cache se renovar junto
+const assetV = (document.querySelector('script[src*="app.js"]').getAttribute("src").split("?")[1] || "");
+const loadAsset = (tag, url) => new Promise((ok, fail) => {
+  const el = document.createElement(tag);
+  if (tag === "link") { el.rel = "stylesheet"; el.href = url + "?" + assetV; } else { el.src = url + "?" + assetV; }
+  el.onload = ok; el.onerror = fail; document.head.appendChild(el);
+});
+function buildAreaMap(){
+  const el = $("#areasMap"), touch = matchMedia("(pointer: coarse)").matches;
+  // No celular, um dedo continua rolando a página; o mapa se move e aproxima com dois dedos
+  const map = areaMap = window.L.map(el, { attributionControl: false, scrollWheelZoom: false, dragging: !touch, minZoom: 6.5, maxZoom: 12, zoomSnap: .25,
+    maxBounds: [[49.3, 1.9], [51.9, 7.1]], maxBoundsViscosity: .8 });
+  // A vista precisa existir antes das camadas: sem ela o Leaflet adia os marcadores e getElement() vem vazio
+  map.fitBounds(window.L.geoJSON(MAP_DATA.border).getBounds(), { padding: [14, 14] });   // abre mostrando a Bélgica inteira
+  // De longe os marcadores ficam menores, para as cidades próximas (Bruxelas, Vilvoorde) não se sobreporem
+  const farClass = () => el.classList.toggle("far", map.getZoom() < 8.5);
+  map.on("zoomend", farClass); farClass();
+  // A roda do mouse só dá zoom depois de um clique no mapa; ao sair com o mouse, volta a rolar a página
+  el.addEventListener("pointerdown", () => map.scrollWheelZoom.enable()); el.addEventListener("mouseleave", () => map.scrollWheelZoom.disable());
+  const shape = (data, style) => window.L.geoJSON(data, { style, interactive: false }).addTo(map);
+  shape(MAP_DATA.around, { color: "#E0D9CC", weight: 1, fillColor: "#EFEAE1", fillOpacity: 1 });
+  shape(MAP_DATA.provinces, { color: "rgba(255,255,255,.22)", weight: 1, fillColor: "#1B3B5C", fillOpacity: 1 });
+  shape(MAP_DATA.border, { color: "#0F2A44", weight: 1.5, fill: false });
+  const icon = window.L.divIcon({ className: "area-pin", html: "<span></span>", iconSize: [22, 22], iconAnchor: [11, 11] });
+  CONFIG.serviceAreas.forEach((a, i) => {
+    const m = areaMarkers[a.id] = window.L.marker([a.lat, a.lng], { icon, riseOnHover: true }).addTo(map)
+      .bindTooltip(areaName(a), { direction: "top", offset: [0, -10], className: "area-tip" });
+    const pin = m.getElement();
+    pin.style.setProperty("--d", 250 + i * 90 + "ms");   // entrada em sequência
+    pin.addEventListener("focus", () => m.openTooltip()); pin.addEventListener("blur", () => m.closeTooltip());
+  });
+  el.classList.add("ready");
+  renderAreas();
+}
+(function initAreas(){
+  const box = $("#areas");
+  const load = () => Promise.all([loadAsset("link", "vendor/leaflet/leaflet.css"), loadAsset("script", "vendor/leaflet/leaflet.js"), loadAsset("script", "map-data.js")])
+    .then(buildAreaMap).catch(e => { console.warn("Mapa indisponível:", e); $("#areasMap").classList.add("failed"); });   // sem mapa, a lista de cidades continua lá
+  if (!("IntersectionObserver" in window)) { box.classList.add("in"); load(); return; }
+  new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { o.disconnect(); load(); } }, { rootMargin: "400px 0px" }).observe(box);
+  new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { o.disconnect(); box.classList.add("in"); } }, { threshold: .25 }).observe(box);
+})();
 
 /* ===== Contato / menu ===== */
 $("#footMail").href = "mailto:" + CONFIG.email; $("#footMail").textContent = CONFIG.email;

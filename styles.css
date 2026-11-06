@@ -136,6 +136,41 @@ details.guide:hover,details.guide[open]{border-color:var(--gold)}
 .about-photo{aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:var(--gold-soft);box-shadow:var(--shadow)}
 .about-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
 
+/* Locais onde já atendemos (mapa) */
+.areas{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);gap:36px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:var(--shadow)}
+.areas .lead{font-size:1rem}
+.area-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:1.3rem}
+.area-list button{font-family:inherit;font-size:.85rem;font-weight:500;color:var(--navy);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:.4rem .85rem;cursor:pointer;transition:.18s}
+.area-list button::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-right:.45rem;vertical-align:1px}
+.area-list button:hover{border-color:var(--gold);background:#fff}
+.map-hint{font-size:.78rem;color:var(--muted);margin-top:1rem;min-height:1.2em}
+.areas-map{height:360px;border-radius:14px;overflow:hidden;background:#F6F3EE;border:1px solid var(--line);position:relative;z-index:0}
+.areas-map:not(.ready)::after{content:"";position:absolute;inset:0;margin:auto;width:28px;height:28px;border:3px solid var(--gold-soft);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite}
+.areas-map.failed{display:none}
+.areas-map .leaflet-container,.areas-map.leaflet-container{background:#F6F3EE;font-family:inherit}
+.areas-map .leaflet-bar{border:0;box-shadow:0 4px 14px rgba(15,42,68,.15);border-radius:10px;overflow:hidden}
+.areas-map .leaflet-bar a{width:34px;height:34px;line-height:32px;color:var(--navy);border-bottom:1px solid var(--line)}
+.areas-map .leaflet-bar a:hover{background:var(--bg);color:var(--gold)}
+.area-pin{display:grid;place-items:center}
+.areas-map.far .area-pin span{width:15px;height:15px;border-width:2px}
+.area-pin span{display:block;width:22px;height:22px;border-radius:50%;background:var(--gold);border:3px solid #fff;box-shadow:0 3px 10px rgba(15,42,68,.45);opacity:0;transform:scale(0);position:relative;transition:transform .15s,width .2s,height .2s}
+.area-pin span::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:2px solid var(--gold-soft);opacity:0}
+.area-pin:hover span,.area-pin:focus span{transform:scale(1.18)}
+.area-pin:focus{outline:none}.area-pin:focus-visible span{box-shadow:0 0 0 3px var(--gold-soft),0 3px 10px rgba(15,42,68,.45)}
+.areas.in .area-pin span{animation:pin-in .5s cubic-bezier(.2,.9,.3,1.35) var(--d,0ms) forwards}
+.areas.in .area-pin span::after{animation:pin-ping 1.4s ease-out calc(var(--d,0ms) + .45s) 2}
+@keyframes pin-in{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+@keyframes pin-ping{0%{opacity:.9;transform:scale(.6)}100%{opacity:0;transform:scale(1.6)}}
+.leaflet-tooltip.area-tip{background:var(--navy);color:#fff;border:0;border-radius:8px;padding:.35rem .7rem;font-family:Inter,system-ui,sans-serif;font-size:.85rem;font-weight:600;box-shadow:0 6px 18px rgba(15,42,68,.25)}
+.leaflet-tooltip-top.area-tip::before{border-top-color:var(--navy)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .area-pin span{opacity:1;transform:none}
+  .areas.in .area-pin span,.areas.in .area-pin span::after{animation:none}
+}
+
 /* Partners */
 .partners{display:grid;gap:16px;margin-top:2rem}
 .partner{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;align-items:center;gap:1.8rem;transition:.2s}
@@ -232,6 +267,8 @@ footer{padding:48px 0 32px;border-top:1px solid var(--line);font-size:.9rem;colo
   .row,.values{grid-template-columns:1fr}
   .slots{grid-template-columns:repeat(3,1fr)}
   .partner{flex-direction:column;align-items:flex-start;gap:1.1rem;padding:22px}
+  .areas{grid-template-columns:1fr;gap:22px;padding:22px}
+  .areas-map{height:300px}
   .modal-head,.modal-body{padding-left:20px;padding-right:20px}
 }
 
